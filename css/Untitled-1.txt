@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="sv-SE">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+
+    <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"363e987a0a",applicationID:"79998397"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(c(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(5),c=e(6),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,n){s[n]=i(p+n,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(l+"tracer",[u.now(),e,t],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&d("lcp",[t[t.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var n=Math.round(e.timeStamp),t={type:e.type};n<=p.now()?t.fid=p.now()-n:n>p.offset&&n<=Date.now()?(n-=p.offset,t.fid=p.now()-n):n=p.now(),g=!0,d("timing",["fi",n,t])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(4),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e){function n(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,n,!1)}n.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],5:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],6:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],7:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function t(t,r,i,o){if(!p.aborted||o){e&&e(t,r,i);for(var a=n(i),c=v(t),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[t]];return d&&d.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(t)}function y(e,n){u(e,function(e,t){n=n||"feature",w[t]=n,n in s||(s[n]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(5),s={},d={},p=n.exports=i();p.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(w,function(n,t){e[n]||(e[n]=t)});var t=a();f("mark",["onload",t+E.offset],null,"api"),f("timing",["load",t]);var r=l.createElement("script");r.src="https://"+e.agent,n.parentNode.insertBefore(r,n)}}function i(){"complete"===l.readyState&&o()}function o(){f("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-E.offset}var c=(new Date).getTime(),f=e("handle"),u=e(5),s=e("ee"),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,y=g&&g.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var h=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1177.min.js"},b=g&&y&&y[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:c,now:a,origin:h,features:{},xhrWrappable:b,userAgent:d};e(1),e(2),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),f("mark",["firstbyte",c],null,"api");var x=0,O=e(7)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(6),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof t?t(r,a):t||{}}catch(u){p([u,"",[r,a,i],c])}s(n+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(n+"err",[r,a,d],c),d}finally{s(n+"end",[r,a,f],c)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<n.length;f++)c=n[f],a=e[c],r(a)||(e[c]=t(a,u?c+i:i,o,c))}function s(t,r,i){if(!f||n){var o=f;f=!0;try{e.emit(t,r,i,n)}catch(a){p([a,t,r,i])}f=o}}function d(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){p([r])}for(var i in e)c.call(e,i)&&(n[i]=e[i]);return n}function p(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Förskola och utbildning | Helsingborg.se</title>
+
+    <meta name="pubdate" content="2015-01-04">
+    <meta name="moddate" content="2020-04-15">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="HandheldFriendly" content="true"/>
+
+
+
+    <style id="kirki-css-vars">:root{}</style>
+<meta property="og:image" content="https://helsingborg.se/wp-content/uploads/2019/03/default-meta-image-1.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Förskola och utbildning | Helsingborg.se" />
+<meta property="og:url" content="https://helsingborg.se/forskola-och-utbildning/" />
+<meta property="og:site_name" content="Helsingborg.se" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Förskola och utbildning | Helsingborg.se" />
+<meta name="twitter:image" content="https://helsingborg.se/wp-content/uploads/2019/03/default-meta-image-1.jpg" />
+<meta name="twitter:image:width" content="1200" />
+<meta name="twitter:image:height" content="630" />
+<link rel="canonical" href="https://helsingborg.se/forskola-och-utbildning/" />
+<link rel="next" href="https://helsingborg.se/forskola-och-utbildning/page/2/" />
+
+<link rel='dns-prefetch' href='//helsingborg-stad.github.io' />
+<link rel='dns-prefetch' href='//cdn.polyfill.io' />
+<link rel='dns-prefetch' href='//instant.page' />
+<link rel='dns-prefetch' href='//f1-eu.readspeaker.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//www.google-analytics.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Flöde för Helsingborg.se &raquo; Förskola och utbildning" href="https://helsingborg.se/forskola-och-utbildning/feed/" />
+<script>(function(){function aa(a,b,c){return a.call.apply(a.bind,arguments)}function ba(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function p(a,b,c){p=Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?aa:ba;return p.apply(null,arguments)}var q=Date.now||function(){return+new Date};function ca(a,b){this.a=a;this.m=b||a;this.c=this.m.document}var da=!!window.FontFace;function t(a,b,c,d){b=a.c.createElement(b);if(c)for(var e in c)c.hasOwnProperty(e)&&("style"==e?b.style.cssText=c[e]:b.setAttribute(e,c[e]));d&&b.appendChild(a.c.createTextNode(d));return b}function u(a,b,c){a=a.c.getElementsByTagName(b)[0];a||(a=document.documentElement);a.insertBefore(c,a.lastChild)}function v(a){a.parentNode&&a.parentNode.removeChild(a)}
+function w(a,b,c){b=b||[];c=c||[];for(var d=a.className.split(/\s+/),e=0;e<b.length;e+=1){for(var f=!1,g=0;g<d.length;g+=1)if(b[e]===d[g]){f=!0;break}f||d.push(b[e])}b=[];for(e=0;e<d.length;e+=1){f=!1;for(g=0;g<c.length;g+=1)if(d[e]===c[g]){f=!0;break}f||b.push(d[e])}a.className=b.join(" ").replace(/\s+/g," ").replace(/^\s+|\s+$/,"")}function y(a,b){for(var c=a.className.split(/\s+/),d=0,e=c.length;d<e;d++)if(c[d]==b)return!0;return!1}
+function z(a){if("string"===typeof a.f)return a.f;var b=a.m.location.protocol;"about:"==b&&(b=a.a.location.protocol);return"https:"==b?"https:":"http:"}function ea(a){return a.m.location.hostname||a.a.location.hostname}
+function A(a,b,c){function d(){k&&e&&f&&(k(g),k=null)}b=t(a,"link",{rel:"stylesheet",href:b,media:"all"});var e=!1,f=!0,g=null,k=c||null;da?(b.onload=function(){e=!0;d()},b.onerror=function(){e=!0;g=Error("Stylesheet failed to load");d()}):setTimeout(function(){e=!0;d()},0);u(a,"head",b)}
+function B(a,b,c,d){var e=a.c.getElementsByTagName("head")[0];if(e){var f=t(a,"script",{src:b}),g=!1;f.onload=f.onreadystatechange=function(){g||this.readyState&&"loaded"!=this.readyState&&"complete"!=this.readyState||(g=!0,c&&c(null),f.onload=f.onreadystatechange=null,"HEAD"==f.parentNode.tagName&&e.removeChild(f))};e.appendChild(f);setTimeout(function(){g||(g=!0,c&&c(Error("Script load timeout")))},d||5E3);return f}return null};function C(){this.a=0;this.c=null}function D(a){a.a++;return function(){a.a--;E(a)}}function F(a,b){a.c=b;E(a)}function E(a){0==a.a&&a.c&&(a.c(),a.c=null)};function G(a){this.a=a||"-"}G.prototype.c=function(a){for(var b=[],c=0;c<arguments.length;c++)b.push(arguments[c].replace(/[\W_]+/g,"").toLowerCase());return b.join(this.a)};function H(a,b){this.c=a;this.f=4;this.a="n";var c=(b||"n4").match(/^([nio])([1-9])$/i);c&&(this.a=c[1],this.f=parseInt(c[2],10))}function fa(a){return I(a)+" "+(a.f+"00")+" 300px "+J(a.c)}function J(a){var b=[];a=a.split(/,\s*/);for(var c=0;c<a.length;c++){var d=a[c].replace(/['"]/g,"");-1!=d.indexOf(" ")||/^\d/.test(d)?b.push("'"+d+"'"):b.push(d)}return b.join(",")}function K(a){return a.a+a.f}function I(a){var b="normal";"o"===a.a?b="oblique":"i"===a.a&&(b="italic");return b}
+function ga(a){var b=4,c="n",d=null;a&&((d=a.match(/(normal|oblique|italic)/i))&&d[1]&&(c=d[1].substr(0,1).toLowerCase()),(d=a.match(/([1-9]00|normal|bold)/i))&&d[1]&&(/bold/i.test(d[1])?b=7:/[1-9]00/.test(d[1])&&(b=parseInt(d[1].substr(0,1),10))));return c+b};function ha(a,b){this.c=a;this.f=a.m.document.documentElement;this.h=b;this.a=new G("-");this.j=!1!==b.events;this.g=!1!==b.classes}function ia(a){a.g&&w(a.f,[a.a.c("wf","loading")]);L(a,"loading")}function M(a){if(a.g){var b=y(a.f,a.a.c("wf","active")),c=[],d=[a.a.c("wf","loading")];b||c.push(a.a.c("wf","inactive"));w(a.f,c,d)}L(a,"inactive")}function L(a,b,c){if(a.j&&a.h[b])if(c)a.h[b](c.c,K(c));else a.h[b]()};function ja(){this.c={}}function ka(a,b,c){var d=[],e;for(e in b)if(b.hasOwnProperty(e)){var f=a.c[e];f&&d.push(f(b[e],c))}return d};function N(a,b){this.c=a;this.f=b;this.a=t(this.c,"span",{"aria-hidden":"true"},this.f)}function O(a){u(a.c,"body",a.a)}function P(a){return"display:block;position:absolute;top:-9999px;left:-9999px;font-size:300px;width:auto;height:auto;line-height:normal;margin:0;padding:0;font-variant:normal;white-space:nowrap;font-family:"+J(a.c)+";"+("font-style:"+I(a)+";font-weight:"+(a.f+"00")+";")};function Q(a,b,c,d,e,f){this.g=a;this.j=b;this.a=d;this.c=c;this.f=e||3E3;this.h=f||void 0}Q.prototype.start=function(){var a=this.c.m.document,b=this,c=q(),d=new Promise(function(d,e){function k(){q()-c>=b.f?e():a.fonts.load(fa(b.a),b.h).then(function(a){1<=a.length?d():setTimeout(k,25)},function(){e()})}k()}),e=new Promise(function(a,d){setTimeout(d,b.f)});Promise.race([e,d]).then(function(){b.g(b.a)},function(){b.j(b.a)})};function R(a,b,c,d,e,f,g){this.v=a;this.B=b;this.c=c;this.a=d;this.s=g||"BESbswy";this.f={};this.w=e||3E3;this.u=f||null;this.o=this.j=this.h=this.g=null;this.g=new N(this.c,this.s);this.h=new N(this.c,this.s);this.j=new N(this.c,this.s);this.o=new N(this.c,this.s);a=new H(this.a.c+",serif",K(this.a));a=P(a);this.g.a.style.cssText=a;a=new H(this.a.c+",sans-serif",K(this.a));a=P(a);this.h.a.style.cssText=a;a=new H("serif",K(this.a));a=P(a);this.j.a.style.cssText=a;a=new H("sans-serif",K(this.a));a=
+P(a);this.o.a.style.cssText=a;O(this.g);O(this.h);O(this.j);O(this.o)}var S={D:"serif",C:"sans-serif"},T=null;function U(){if(null===T){var a=/AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(window.navigator.userAgent);T=!!a&&(536>parseInt(a[1],10)||536===parseInt(a[1],10)&&11>=parseInt(a[2],10))}return T}R.prototype.start=function(){this.f.serif=this.j.a.offsetWidth;this.f["sans-serif"]=this.o.a.offsetWidth;this.A=q();la(this)};
+function ma(a,b,c){for(var d in S)if(S.hasOwnProperty(d)&&b===a.f[S[d]]&&c===a.f[S[d]])return!0;return!1}function la(a){var b=a.g.a.offsetWidth,c=a.h.a.offsetWidth,d;(d=b===a.f.serif&&c===a.f["sans-serif"])||(d=U()&&ma(a,b,c));d?q()-a.A>=a.w?U()&&ma(a,b,c)&&(null===a.u||a.u.hasOwnProperty(a.a.c))?V(a,a.v):V(a,a.B):na(a):V(a,a.v)}function na(a){setTimeout(p(function(){la(this)},a),50)}function V(a,b){setTimeout(p(function(){v(this.g.a);v(this.h.a);v(this.j.a);v(this.o.a);b(this.a)},a),0)};function W(a,b,c){this.c=a;this.a=b;this.f=0;this.o=this.j=!1;this.s=c}var X=null;W.prototype.g=function(a){var b=this.a;b.g&&w(b.f,[b.a.c("wf",a.c,K(a).toString(),"active")],[b.a.c("wf",a.c,K(a).toString(),"loading"),b.a.c("wf",a.c,K(a).toString(),"inactive")]);L(b,"fontactive",a);this.o=!0;oa(this)};
+W.prototype.h=function(a){var b=this.a;if(b.g){var c=y(b.f,b.a.c("wf",a.c,K(a).toString(),"active")),d=[],e=[b.a.c("wf",a.c,K(a).toString(),"loading")];c||d.push(b.a.c("wf",a.c,K(a).toString(),"inactive"));w(b.f,d,e)}L(b,"fontinactive",a);oa(this)};function oa(a){0==--a.f&&a.j&&(a.o?(a=a.a,a.g&&w(a.f,[a.a.c("wf","active")],[a.a.c("wf","loading"),a.a.c("wf","inactive")]),L(a,"active")):M(a.a))};function pa(a){this.j=a;this.a=new ja;this.h=0;this.f=this.g=!0}pa.prototype.load=function(a){this.c=new ca(this.j,a.context||this.j);this.g=!1!==a.events;this.f=!1!==a.classes;qa(this,new ha(this.c,a),a)};
+function ra(a,b,c,d,e){var f=0==--a.h;(a.f||a.g)&&setTimeout(function(){var a=e||null,k=d||null||{};if(0===c.length&&f)M(b.a);else{b.f+=c.length;f&&(b.j=f);var h,m=[];for(h=0;h<c.length;h++){var l=c[h],n=k[l.c],r=b.a,x=l;r.g&&w(r.f,[r.a.c("wf",x.c,K(x).toString(),"loading")]);L(r,"fontloading",x);r=null;null===X&&(X=window.FontFace?(x=/Gecko.*Firefox\/(\d+)/.exec(window.navigator.userAgent))?42<parseInt(x[1],10):!0:!1);X?r=new Q(p(b.g,b),p(b.h,b),b.c,l,b.s,n):r=new R(p(b.g,b),p(b.h,b),b.c,l,b.s,a,
+n);m.push(r)}for(h=0;h<m.length;h++)m[h].start()}},0)}function qa(a,b,c){var d=[],e=c.timeout;ia(b);var d=ka(a.a,c,a.c),f=new W(a.c,b,e);a.h=d.length;b=0;for(c=d.length;b<c;b++)d[b].load(function(b,d,c){ra(a,f,b,d,c)})};function sa(a,b){this.c=a;this.a=b}function ta(a,b,c){var d=z(a.c);a=(a.a.api||"fast.fonts.net/jsapi").replace(/^.*http(s?):(\/\/)?/,"");return d+"//"+a+"/"+b+".js"+(c?"?v="+c:"")}
+sa.prototype.load=function(a){function b(){if(f["__mti_fntLst"+d]){var c=f["__mti_fntLst"+d](),e=[],h;if(c)for(var m=0;m<c.length;m++){var l=c[m].fontfamily;void 0!=c[m].fontStyle&&void 0!=c[m].fontWeight?(h=c[m].fontStyle+c[m].fontWeight,e.push(new H(l,h))):e.push(new H(l))}a(e)}else setTimeout(function(){b()},50)}var c=this,d=c.a.projectId,e=c.a.version;if(d){var f=c.c.m;B(this.c,ta(c,d,e),function(e){e?a([]):(f["__MonotypeConfiguration__"+d]=function(){return c.a},b())}).id="__MonotypeAPIScript__"+
+d}else a([])};function ua(a,b){this.c=a;this.a=b}ua.prototype.load=function(a){var b,c,d=this.a.urls||[],e=this.a.families||[],f=this.a.testStrings||{},g=new C;b=0;for(c=d.length;b<c;b++)A(this.c,d[b],D(g));var k=[];b=0;for(c=e.length;b<c;b++)if(d=e[b].split(":"),d[1])for(var h=d[1].split(","),m=0;m<h.length;m+=1)k.push(new H(d[0],h[m]));else k.push(new H(d[0]));F(g,function(){a(k,f)})};function va(a,b,c){a?this.c=a:this.c=b+wa;this.a=[];this.f=[];this.g=c||""}var wa="//fonts.googleapis.com/css";function xa(a,b){for(var c=b.length,d=0;d<c;d++){var e=b[d].split(":");3==e.length&&a.f.push(e.pop());var f="";2==e.length&&""!=e[1]&&(f=":");a.a.push(e.join(f))}}
+function ya(a){if(0==a.a.length)throw Error("No fonts to load!");if(-1!=a.c.indexOf("kit="))return a.c;for(var b=a.a.length,c=[],d=0;d<b;d++)c.push(a.a[d].replace(/ /g,"+"));b=a.c+"?family="+c.join("%7C");0<a.f.length&&(b+="&subset="+a.f.join(","));0<a.g.length&&(b+="&text="+encodeURIComponent(a.g));return b};function za(a){this.f=a;this.a=[];this.c={}}
+var Aa={latin:"BESbswy","latin-ext":"\u00e7\u00f6\u00fc\u011f\u015f",cyrillic:"\u0439\u044f\u0416",greek:"\u03b1\u03b2\u03a3",khmer:"\u1780\u1781\u1782",Hanuman:"\u1780\u1781\u1782"},Ba={thin:"1",extralight:"2","extra-light":"2",ultralight:"2","ultra-light":"2",light:"3",regular:"4",book:"4",medium:"5","semi-bold":"6",semibold:"6","demi-bold":"6",demibold:"6",bold:"7","extra-bold":"8",extrabold:"8","ultra-bold":"8",ultrabold:"8",black:"9",heavy:"9",l:"3",r:"4",b:"7"},Ca={i:"i",italic:"i",n:"n",normal:"n"},
+Da=/^(thin|(?:(?:extra|ultra)-?)?light|regular|book|medium|(?:(?:semi|demi|extra|ultra)-?)?bold|black|heavy|l|r|b|[1-9]00)?(n|i|normal|italic)?$/;
+function Ea(a){for(var b=a.f.length,c=0;c<b;c++){var d=a.f[c].split(":"),e=d[0].replace(/\+/g," "),f=["n4"];if(2<=d.length){var g;var k=d[1];g=[];if(k)for(var k=k.split(","),h=k.length,m=0;m<h;m++){var l;l=k[m];if(l.match(/^[\w-]+$/)){var n=Da.exec(l.toLowerCase());if(null==n)l="";else{l=n[2];l=null==l||""==l?"n":Ca[l];n=n[1];if(null==n||""==n)n="4";else var r=Ba[n],n=r?r:isNaN(n)?"4":n.substr(0,1);l=[l,n].join("")}}else l="";l&&g.push(l)}0<g.length&&(f=g);3==d.length&&(d=d[2],g=[],d=d?d.split(","):
+g,0<d.length&&(d=Aa[d[0]])&&(a.c[e]=d))}a.c[e]||(d=Aa[e])&&(a.c[e]=d);for(d=0;d<f.length;d+=1)a.a.push(new H(e,f[d]))}};function Fa(a,b){this.c=a;this.a=b}var Ga={Arimo:!0,Cousine:!0,Tinos:!0};Fa.prototype.load=function(a){var b=new C,c=this.c,d=new va(this.a.api,z(c),this.a.text),e=this.a.families;xa(d,e);var f=new za(e);Ea(f);A(c,ya(d),D(b));F(b,function(){a(f.a,f.c,Ga)})};function Ha(a,b){this.c=a;this.a=b}Ha.prototype.load=function(a){var b=this.a.id,c=this.c.m;b?B(this.c,(this.a.api||"https://use.typekit.net")+"/"+b+".js",function(b){if(b)a([]);else if(c.Typekit&&c.Typekit.config&&c.Typekit.config.fn){b=c.Typekit.config.fn;for(var e=[],f=0;f<b.length;f+=2)for(var g=b[f],k=b[f+1],h=0;h<k.length;h++)e.push(new H(g,k[h]));try{c.Typekit.load({events:!1,classes:!1,async:!0})}catch(m){}a(e)}},2E3):a([])};function Ia(a,b){this.c=a;this.f=b;this.a=[]}Ia.prototype.load=function(a){var b=this.f.id,c=this.c.m,d=this;b?(c.__webfontfontdeckmodule__||(c.__webfontfontdeckmodule__={}),c.__webfontfontdeckmodule__[b]=function(b,c){for(var g=0,k=c.fonts.length;g<k;++g){var h=c.fonts[g];d.a.push(new H(h.name,ga("font-weight:"+h.weight+";font-style:"+h.style)))}a(d.a)},B(this.c,z(this.c)+(this.f.api||"//f.fontdeck.com/s/css/js/")+ea(this.c)+"/"+b+".js",function(b){b&&a([])})):a([])};var Y=new pa(window);Y.a.c.custom=function(a,b){return new ua(b,a)};Y.a.c.fontdeck=function(a,b){return new Ia(b,a)};Y.a.c.monotype=function(a,b){return new sa(b,a)};Y.a.c.typekit=function(a,b){return new Ha(b,a)};Y.a.c.google=function(a,b){return new Fa(b,a)};var Z={load:p(Y.load,Y)};"function"===typeof define&&define.amd?define(function(){return Z}):"undefined"!==typeof module&&module.exports?module.exports=Z:(window.WebFont=Z,window.WebFontConfig&&Y.load(window.WebFontConfig));}());
+</script><link rel='stylesheet' id='hbg-prime-css'  href='//helsingborg-stad.github.io/styleguide-web/dist/css/hbg-prime-red.min.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='municipio-css'  href='https://helsingborg.se/wp-content/themes/municipio/assets/dist/css/app.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://helsingborg.se/wp/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css'  href='https://helsingborg.se/wp-content/plugins/tablepress/css/default.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='form-builder-css'  href='https://helsingborg.se/wp-content/plugins/modularity-form-builder/dist/css/modularity-form-builder.067cd7cb.css' type='text/css' media='all' />
+<link rel='stylesheet' id='modularity-contact-banner-css-css'  href='https://helsingborg.se/wp-content/plugins/modularity-contact-banner/dist/css/modularity-contact-banner-308275df03.css' type='text/css' media='all' />
+<link rel='stylesheet' id='modularity-guides-css'  href='https://helsingborg.se/wp-content/plugins/modularity-guides/dist/css/modularity-guides.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='skyfish-integration-css-css'  href='https://helsingborg.se/wp-content/plugins/skyfish-integration/dist/css/skyfish-integration.d15708345a59022eb705.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='job-listings-css-css'  href='https://helsingborg.se/wp-content/plugins/job-listings/dist/css/job-listings.4ffcfa1e.css' type='text/css' media='all' />
+<link rel='stylesheet' id='event-integration-css'  href='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/dist/css/event-manager-integration.06b52eb7.css' type='text/css' media='all' />
+<script type='text/javascript' id='hbg-prime-js-extra'>
+/* <![CDATA[ */
+var HbgPrimeArgs = {"api":{"root":"https:\/\/helsingborg.se\/wp-json\/","nonce":"271b2f4b5e","postTypeRestUrl":"https:\/\/helsingborg.se\/wp-json\/wp\/v2\/pages"},"cookieConsent":{"show":true,"message":"<p>P\u00e5 Helsingborg.se\u00a0anv\u00e4nder vi cookies (kakor) f\u00f6r att webbplatsen ska fungera p\u00e5 ett bra s\u00e4tt f\u00f6r dig. Genom att klicka vidare godk\u00e4nner du att vi anv\u00e4nder cookies. <a href=\"https:\/\/helsingborg.se\/toppmeny\/om-webbplatsen\/sa-har-behandlar-vi-dina-personuppgifter\/\">L\u00e4s mer om hur Helsingborgs stad behandlar personuppgifter.<\/a><\/p>\n","button":"Jag godk\u00e4nner","placement":"bottom-fixed"},"googleTranslate":{"gaTrack":true,"gaUA":"UA-16678811-1"},"scrollElevator":{"cta":"Till toppen","tooltip":"","tooltipPosition":"data-tooltip-left"},"tableFilter":{"empty":"Inga matchande filter hittades\u2026"}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='//helsingborg-stad.github.io/styleguide-web/dist/js/hbg-prime.min.js?ver=5.5.1' id='hbg-prime-js'></script>
+<script type='text/javascript' id='municipio-js-extra'>
+/* <![CDATA[ */
+var MunicipioLang = {"printbreak":{"tooltip":"Infoga sidbrytning f\u00f6r utskrift"},"messages":{"deleteComment":"\u00c4r du s\u00e4ker p\u00e5 att du vill ta bort kommentaren?","onError":"N\u00e5got gick fel, v\u00e4nligen f\u00f6rs\u00f6k igen senare"}};
+var likeButtonData = {"ajax_url":"https:\/\/helsingborg.se\/wp\/wp-admin\/admin-ajax.php","nonce":"61ca18e1cf"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/themes/municipio/assets/dist/js/app.js' id='municipio-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/themes/municipio/assets/dist/js/ajax.js' id='municipio-ajax-js'></script>
+<script type='text/javascript' defer="defer" src='https://cdn.polyfill.io/v3/polyfill.min.js?ver=5.5.1' id='polyfill-js'></script>
+<script type='text/javascript' src='//f1-eu.readspeaker.com/script/5507/ReadSpeaker.js?pids=embhl&#038;jit=1&#038;ver=1.0.0' id='readspeaker-js'></script>
+<script type='text/javascript' id='form-builder-js-front-js-extra'>
+/* <![CDATA[ */
+var formbuilder = {"site_key":"6Ld8YTEUAAAAAECqGGXNZbyMIfG0xZMIOJM_D3Vw","sending":"Skickar","checkbox_required":"Du m\u00e5ste kryssa f\u00f6r minst ett alternativ","something_went_wrong":"N\u00e5got gick fel"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity-form-builder/dist/js/modularity-form-builder-front.f828ff70.js' id='form-builder-js-front-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/jquery/jquery.js' id='jquery-core-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wp-polyfill-js-after'>
+( 'fetch' in window ) || document.write( '<script defer="defer" src="https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js"></scr' + 'ipt>' );( document.contains ) || document.write( '<script defer="defer" src="https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script defer="defer" src="https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script defer="defer" src="https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill-url.min.js"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script defer="defer" src="https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script defer="defer" src="https://helsingborg.se/wp/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js"></scr' + 'ipt>' );
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/dist/vendor/react.min.js' id='react-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/dist/vendor/react-dom.min.js' id='react-dom-js'></script>
+<script type='text/javascript' id='modularity-json-render-js-extra'>
+/* <![CDATA[ */
+var modJsonRender = {"translation":{"somethingWentWrong":"N\u00e5got gick fel, v\u00e4nligen f\u00f6rs\u00f6k igen senare.","noResults":"Inga resultat hittades.","filterOn":"Filtrera p\u00e5\u2026","next":"N\u00e4sta","prev":"F\u00f6reg\u00e5ende"}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity-json-render/dist/js/Front/IndexFront-27cbf4e9aa.js' id='modularity-json-render-js'></script>
+
+            <script>
+            WebFont.load({
+                google: {
+                  families: ['Roboto:300,400,400i,500,500i,700,700i,900']
+                },
+                timeout: 2000
+              });
+            </script>
+        
+            <style>
+            body {
+                font-family: Roboto,system,Segoe UI,Tahoma,-apple-system;
+            }
+            </style>
+        <link rel="icon" href="https://helsingborg.se/wp-content/uploads/2017/05/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon-precomposed" href="https://helsingborg.se/wp-content/uploads/2017/05/touch-icon.png">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="https://helsingborg.se/wp-content/uploads/2017/05/touch-icon-ms.png">
+<meta name="google-site-verification" content="Mg4roQt1zi_-HRVTPiTKpXuc7HPxHJUZ9gzjMyNBhnM" /><style>#menu-sidfotsmeny a {
+    background-color: rgba(0,0,0,.05);
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+#menu-sidfotsmeny a:hover {
+    background-color: rgba(0,0,0,.07);
+}
+
+#menu-sidfotsmeny li + li {
+    margin-top: 3px;
+}
+
+#site-header .logotype svg {
+    max-height: 70px; 
+}
+
+.search-no-results:not(.archive) #main-content > div {display: none !important;}
+
+/* Start survey */ 
+.smcx-widget.smcx-modal .smcx-modal-header,.smcx-widget.smcx-modal .smcx-widget-footer{background-color:#fff}.smcx-widget.smcx-modal{outline:1000px solid rgba(0,0,0,.7);border-radius:0!important;background-color:rgba(0,0,0,0)!important;box-shadow:0 0 10px rgba(0,0,0,.5);z-index:9999;-webkit-animation:fade-in-bottom .5s cubic-bezier(0.250,0.460,0.450,0.940) both;animation:fade-in-bottom .5s cubic-bezier(0.250,0.460,0.450,0.940) both}@media screen and (min-width: 700px){.smcx-widget.smcx-modal{max-width:700px!important;margin-left:-350px!important;height:70%!important;margin-top:0!important;top:15%!important}.smcx-modal .smcx-modal-content{margin:0!important;width:100%!important;height:95%!important}}@media screen and (min-width: 501px) and (max-width: 699px){.smcx-widget.smcx-modal{max-width:500px!important;margin-left:-250px!important;height:70%!important;margin-top:0!important;top:15%!important}.smcx-modal .smcx-modal-content{margin:0!important;width:100%!important;height:95%!important}}@media screen and (max-width: 500px){.smcx-widget.smcx-modal{width:100%!important;height:100vh!important;max-width:100%!important;margin:0!important;top:0!important}.smcx-widget.smcx-modal .smcx-modal-content{height:100%!important;margin:0!important;width:100%!important}}.smcx-widget .smcx-modal-footer{display:none!important}@-webkit-keyframes fade-in-bottom{0%{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes fade-in-bottom{0%{-webkit-transform:translateY(50px);transform:translateY(50px);opacity:0}100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
+/* End survey */
+
+/* Remove double headline Stratsys */
+.benchmarkGroupName.ng-binding {
+    display: none;
+}
+
+/*********RESAN**********/
+.page-id-337460 .slide .text-xl{
+font-size:5em
+}
+
+.page-id-337460 .slider .text-block.text-block-center {
+     background-color: rgba(0,0,0,.0) !important; 
+    text-align: center;
+    padding: 0;
+    top: 0;
+}
+
+.single-resan .post-single{
+    margin-top: -300px;
+    background-color: #fffbf5;
+    padding: 60px;
+margin-bottom: 45px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+	-webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+}
+
+.single-resan .post-header h1{
+    font-size: 2.5rem;
+    color: #ae0b05;
+    font-weight: 300;
+}
+
+.single-resan .box-content p{
+    font-size: large;
+}
+
+@media screen and (max-width: 32.4375em){
+.single-resan .post-single{
+    margin-top: -200px;
+padding: 30px;
+margin-bottom: 45px;
+}
+.page-id-337460 .slider .text-block.text-block-center span em {
+    font-size: 4.8em !important;
+}
+
+.single-resan .post-header h1{
+    font-size: 2rem;
+    color: #ae0b05;
+    font-weight: 300;
+}
+
+}
+
+@media screen and (max-width: 1366px){
+.single-resan .post-single{
+    margin-top: -200px;
+padding: 30px;
+margin-bottom: 45px;
+}
+.page-id-337460 .slider .text-block.text-block-center span em {
+    font-size: 4.8em !important;
+}
+
+.single-resan .post-header h1{
+    font-size: 2rem;
+    color: #ae0b05;
+    font-weight: 300;
+}
+}
+.modularity-mod-contact-banner {
+padding-left: 0;
+padding-right: 0;
+} 
+
+
+/* Corona hidden on archive */ 
+.post-type-archive-job-listing .modularity-mod-notice-646911 {
+display: none;
+}
+
+</style>
+</head>
+<body class="archive post-type-archive post-type-archive-forskola-och-utbil no-js t-helsingborg t-municipio is-child-theme">
+
+<a href="#main-menu" class="btn btn-default btn-block btn-lg btn-offcanvas"
+   tabindex="1">Hoppa till huvudmenyn</a>
+<a href="#main-content" class="btn btn-default btn-block btn-lg btn-offcanvas"
+   tabindex="2">Hoppa till innehåll</a>
+
+<div id="wrapper">
+    
+    
+    <header id="site-header" class="site-header site-header header-business">
+        <div class="print-only container">
+            <div class="grid">
+                <div class="grid-sm-12">
+                    <a href="https://helsingborg.se" class="logotype" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 239.4 66.9" id="Layer_1" version="1.1" viewBox="0 0 239.4 66.9" x="0px" y="0px" xml:space="preserve">
+<g id="XMLID_2_">
+	<g id="XMLID_54_">
+		<polygon fill="#1D1D1B" id="XMLID_72_" points="74.5,41.6 74.5,34.4 66.2,34.4 66.2,41.6 63.6,41.6 63.6,25.1 66.2,25.1     66.2,32.1 74.5,32.1 74.5,25.1 77.2,25.1 77.2,41.6 74.5,41.6   "></polygon>
+		<polygon fill="#1D1D1B" id="XMLID_71_" points="83.3,41.6 83.3,25.1 92.1,25.1 91.3,27.4 85.9,27.4 85.9,32.1 91.3,32.1     91.3,34.3 85.9,34.3 85.9,39.4 92.2,39.4 92.2,41.6 83.3,41.6   "></polygon>
+		<polygon fill="#1D1D1B" id="XMLID_70_" points="97.6,41.6 97.6,25.1 100.2,25.1 100.2,39.4 106.3,39.4 106.3,41.6 97.6,41.6   "></polygon>
+		<path d="M114.9,41.9c-2.3,0-3.8-0.8-4.9-1.4l1.1-2c0.8,0.6,2.1,1.2,3.7,1.2c1.3,0,2.9-0.6,2.9-2.1    c0-2.5-4-3-6-5.3c-0.7-0.8-1.1-1.7-1.1-2.9c0-2.4,1.9-4.4,5.2-4.4c1.8,0,3.1,0.5,3.9,0.9l0,2.5c-1.1-0.7-2.4-1.1-3.8-1.1    c-1.4,0-2.6,0.6-2.6,1.9c0,3.3,7.2,3.2,7.2,8.2C120.5,40.1,118,41.9,114.9,41.9L114.9,41.9z" fill="#1D1D1B" id="XMLID_69_"></path>
+		<polygon fill="#1D1D1B" id="XMLID_68_" points="125.7,41.6 125.7,25.1 128.4,25.1 128.4,41.6 125.7,41.6   "></polygon>
+		<path d="M146.5,41.6l-7.8-10.1c-0.8-1-1.2-1.7-1.6-2.4h0c0,0.6,0,1.4,0,2.2v10.4h-2.6V25.1h2.7    l7.5,9.8c0.9,1.2,1.4,1.8,1.7,2.5h0c0-0.7,0-1.5,0-2.3v-9.9h2.6v16.5H146.5L146.5,41.6z" fill="#1D1D1B" id="XMLID_67_"></path>
+		<path d="M162.1,41.9c-5,0-8.3-3.5-8.3-8.3c0-5,3.6-8.6,9-8.6c2.1,0,3.7,0.5,4.8,0.9l0,2.5    c-1.2-0.6-2.8-1.2-4.6-1.2c-4.3,0-6.3,2.7-6.3,6.1c0,3.7,2.3,6.3,6.1,6.3c1.2,0,2.2-0.2,2.8-0.6v-5.7h2.6v7    C166.8,41.1,164.6,41.9,162.1,41.9L162.1,41.9z" fill="#1D1D1B" id="XMLID_66_"></path>
+		<path d="M178.9,34.4h-2.2v5h2.1c2.1,0,3.2-1,3.2-2.6C182,35.4,180.8,34.4,178.9,34.4L178.9,34.4z     M176.7,27.4v4.7h1.9c1.2,0,2.4-0.9,2.4-2.4c0-1.4-0.8-2.3-2.6-2.3H176.7L176.7,27.4z M178.9,41.6h-4.9V25.1h5    c3.2,0,4.6,2.1,4.6,4.1c0,1.5-0.7,2.9-2.1,3.5v0c1.7,0.4,3.2,2,3.2,4C184.7,39,183.2,41.6,178.9,41.6L178.9,41.6z" fill="#1D1D1B" id="XMLID_62_"></path>
+		<path d="M196.9,27.3c-3.3,0-5.6,2.4-5.6,6.2c0,3.8,2.2,6.2,5.6,6.2c3.3,0,5.5-2.4,5.5-6.2    C202.5,29.8,200.4,27.3,196.9,27.3L196.9,27.3z M191,27.4c1.5-1.5,3.6-2.4,6-2.4c2.6,0,4.8,1,6.3,2.6c1.4,1.5,2.1,3.5,2.1,5.9    c0,2.5-0.8,4.7-2.4,6.2c-1.5,1.5-3.5,2.3-6,2.3c-2.3,0-4.3-0.7-5.7-2c-1.7-1.5-2.6-3.8-2.6-6.3C188.6,31.1,189.5,28.9,191,27.4    L191,27.4z" fill="#1D1D1B" id="XMLID_59_"></path>
+		<path d="M214.2,27.4h-1.5v5.5h1.6c1.7,0,3-1.3,3-2.9C217.2,28.6,216.4,27.4,214.2,27.4L214.2,27.4z     M218.8,41.6c-2.6-4.3-3.9-6.5-4.5-6.7h-1.5v6.7h-2.6V25.1h4.1c4.1,0,5.7,2.1,5.7,4.6c0,2.3-1.5,3.7-3.1,4.4v0    c0.7,0.3,2.4,3.3,5,7.5H218.8L218.8,41.6z" fill="#1D1D1B" id="XMLID_56_"></path>
+		<path d="M233.3,41.9c-5,0-8.3-3.5-8.3-8.3c0-5,3.6-8.6,9-8.6c2.1,0,3.7,0.5,4.8,0.9l0,2.5    c-1.2-0.6-2.8-1.2-4.6-1.2c-4.3,0-6.3,2.7-6.3,6.1c0,3.7,2.3,6.3,6.1,6.3c1.2,0,2.2-0.2,2.8-0.6v-5.7h2.6v7    C238.1,41.1,235.9,41.9,233.3,41.9L233.3,41.9z" fill="#1D1D1B" id="XMLID_55_"></path>
+	</g>
+	<g id="XMLID_3_">
+		<path d="M42.5,17.5H21.9l0,0h0l0,0H1.2c0,37.5,0,37.5,0,39.3c0,1.7,0.7,3.5,3.4,4.2    c2.7,0.7,12.6,3,14.4,3.5c2.4,0.6,2.8,2.3,2.9,2.5v0l0,0l0,0v0c0-0.1,0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5    c2.7-0.7,3.4-2.5,3.4-4.2C42.5,55,42.5,55,42.5,17.5L42.5,17.5z" fill="#FFFFFF" id="XMLID_53_"></path>
+		<path d="M16.3,38.9h-9c-0.9,0.3-3,1.4-3,3.4    c0,0.7,0.3,1.2,0.6,1.5h6.5L16.3,38.9z" fill="#E20613" id="XMLID_52_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#E20613" id="XMLID_51_" points="21.7,33.7 21.8,33.8 21.9,33.8     22,33.7 26.7,38.2 26.7,29 17,29 17,38.2   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<path d="M11.9,44.2H5.3v6h0.8v2.4h3.7v-2.5h2.9v-5.7    C12.3,44.4,12.1,44.3,11.9,44.2z" fill="#E20613" id="XMLID_50_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M29.3,44.1c-0.2,0.1-0.7,0.4-1.4,0.4    c0,0,0,0,0,0c-0.7,0-1.1-0.2-1.4-0.3c-0.2,0.1-0.7,0.3-1.4,0.3c-0.7,0-1.2-0.2-1.5-0.4c-0.2,0.2-0.8,0.4-1.8,0.4    c-1,0-1.5-0.2-1.8-0.4c-0.3,0.1-0.8,0.4-1.5,0.4c-0.7,0-1.2-0.2-1.4-0.3c-0.2,0.1-0.7,0.3-1.4,0.3c-0.7,0-1.2-0.3-1.4-0.4    c-0.2,0.1-0.7,0.2-1.2,0.3v5.7h2.1v2.4H19v-2.3h5.6v2.3h3.7v-2.4h2.1v-5.7C30,44.4,29.5,44.2,29.3,44.1z" fill="#E20613" id="XMLID_49_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M36.3,38.9h-9l4.9,4.8h6.5    c0.3-0.3,0.6-0.8,0.6-1.5C39.4,40.2,37.2,39.2,36.3,38.9z" fill="#E20613" id="XMLID_48_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M31,44.4v5.7h2.9v2.5h3.7v-2.3v-0.1h0.9v-6    h-6.6C31.6,44.3,31.4,44.4,31,44.4z" fill="#E20613" id="XMLID_47_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M38.3,50.9v2.4h-5.1v-2.5h-4.1v2.4h-5.2V51    h-4.2v2.3h-5.2v-2.4h-4.1v2.5H5.4v-2.4H1.2c0,4.5,0,5,0,5.9c0,1.7,0.7,3.5,3.4,4.2c2.7,0.7,12.6,3,14.4,3.5    c2.4,0.6,2.9,2.5,2.9,2.5s0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5c2.7-0.7,3.4-2.5,3.4-4.2c0-0.9,0-1.3,0-5.9H38.3z" fill="#E20613" id="XMLID_46_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#E20613" id="XMLID_45_" points="18,25.6 18,26.9 18.9,26.9     18.9,25.5 21.3,25.5 21.3,26.9 22.4,26.9 22.4,25.5 24.8,25.5 24.8,26.9 25.7,26.9 25.7,25.6 26.1,25.6 21.9,22.3 21.9,22.3     21.9,22.3 17.6,25.6   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<path d="M21.9,22.1c0.2,0,0.4-0.2,0.4-0.4c0-0.2-0.2-0.4-0.4-0.4c-0.2,0-0.4,0.2-0.4,0.4    C21.5,21.9,21.6,22.1,21.9,22.1" fill="#E20613" id="XMLID_44_"></path>
+		<path d="M22.6,19.9c0,0-0.2,0.1-0.3,0.1l0,0c0,0-0.1,0-0.1,0c0,0,0,0,0,0c0-0.1,0-0.2,0-0.2    c0-0.1,0.1-0.3,0.1-0.3l0.1-0.2l-0.2,0.1c0,0-0.2,0.1-0.3,0.1c-0.1,0-0.3-0.1-0.3-0.1l-0.2-0.1l0.1,0.2c0,0,0.1,0.2,0.1,0.3    c0,0.1,0,0.2,0,0.2c0,0,0,0,0,0c0,0-0.1,0-0.1,0c-0.1,0-0.3-0.1-0.3-0.1l-0.1,0v0.5c0,0.1,0,0.4,0,0.4l0,0.1l0.1-0.1    c0,0,0.1-0.1,0.2-0.1c0,0,0.1,0,0.1,0c0,0,0,0,0,0c0,0,0,0.1,0,0.1c0,0.1-0.1,0.4-0.1,0.4l0,0.1l0,0c0.1-0.1,0.3-0.2,0.5-0.2    c0.2,0,0.4,0.1,0.5,0.2l0,0l0-0.1c0,0-0.1-0.3-0.1-0.4c0,0,0-0.1,0-0.1c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0.1,0,0.2,0.1,0.2,0.1    l0.1,0.1l0-0.1c0,0,0-0.2,0-0.4v-0.5L22.6,19.9L22.6,19.9z" fill="#E20613" id="XMLID_43_"></path>
+		<path d="M9.3,27c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5    C8.8,27.2,9,27,9.3,27" fill="#E20613" id="XMLID_42_"></path>
+		<polygon fill="#E20613" id="XMLID_41_" points="9.6,28.3 9.1,28.3 9.1,29.9 9.6,29.9 9.6,28.3   "></polygon>
+		<path d="M34.4,27c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5    C33.9,27.2,34.1,27,34.4,27" fill="#E20613" id="XMLID_40_"></path>
+		<polygon fill="#E20613" id="XMLID_39_" points="34.6,28.3 34.2,28.3 34.2,29.9 34.6,29.9 34.6,28.3   "></polygon>
+		<polygon fill="#E20613" id="XMLID_38_" points="42.2,0 42.2,0.6 41.2,0.6 41.2,0 39.8,0 39.8,0.6 38.8,0.6 38.8,0 37.3,0     37.3,1.7 38,1.7 38,4.4 36.9,4.4 36.9,6 34.8,6 34.8,4.4 33.7,4.4 33.7,1.7 34.4,1.7 34.4,0 32.9,0 32.9,0.6 31.9,0.6 31.9,0     30.5,0 30.5,0.6 29.4,0.6 29.4,0 28,0 28,1.7 28.7,1.7 28.7,4.4 27.6,4.4 27.6,6 25.5,6 25.5,4.4 24.4,4.4 24.4,1.7 25,1.7 25,0     23.6,0 23.6,0.6 22.6,0.6 22.6,0 21.1,0 21.1,0.6 20.1,0.6 20.1,0 18.7,0 18.7,1.7 19.3,1.7 19.3,4.4 18.2,4.4 18.2,6 16.1,6     16.1,4.4 15.1,4.4 15.1,1.7 15.7,1.7 15.7,0 14.3,0 14.3,0.6 13.3,0.6 13.3,0 11.8,0 11.8,0.6 10.8,0.6 10.8,0 9.3,0 9.3,1.7     10,1.7 10,4.4 8.9,4.4 8.9,6 6.8,6 6.8,4.4 5.7,4.4 5.7,1.7 6.4,1.7 6.4,0 4.9,0 4.9,0.6 3.9,0.6 3.9,0 2.5,0 2.5,0.6 1.5,0.6     1.5,0 0,0 0,1.7 0.7,1.7 0.7,6.1 3.2,8.8 3.2,13.1 2,13.1 2,17.5 41.8,17.5 41.8,13.1 40.5,13.1 40.5,8.8 43,6.1 43,1.7 43.7,1.7     43.7,0 42.2,0   "></polygon>
+		<rect fill="#E20613" height="3.5" id="XMLID_37_" stroke="#FFFFFF" stroke-width="5.756000e-02" width="8.7" x="27.2" y="34.8"></rect>
+		<polygon fill="#E20613" id="XMLID_36_" points="27.2,30.2 27.2,34.3 37.8,34.3     34.8,30.2   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<polygon fill="#E20613" id="XMLID_35_" points="16.5,30.2 8.9,30.2 5.9,34.3     16.5,34.3   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<rect fill="#E20613" height="3.5" id="XMLID_34_" stroke="#FFFFFF" stroke-width="5.756000e-02" width="8.7" x="7.8" y="34.8"></rect>
+		<path d="M16.4,48.8h-1.6v-2.3c0.2-0.8,1.3-0.8,1.6,0V48.8L16.4,48.8z" fill="#FFFFFF" id="XMLID_33_"></path>
+		<path d="M22.8,48.8h-2v-2.5c0.3-1,1.7-1,2,0V48.8L22.8,48.8z" fill="#FFFFFF" id="XMLID_32_"></path>
+		<path d="M19.6,48.8h-2v-2.5c0.3-1,1.7-1,2,0V48.8L19.6,48.8z" fill="#FFFFFF" id="XMLID_31_"></path>
+		<path d="M27.3,48.8h1.6v-2.3c-0.2-0.8-1.3-0.8-1.6,0V48.8L27.3,48.8z" fill="#FFFFFF" id="XMLID_30_"></path>
+		<path d="M24.1,48.8h2v-2.5c-0.3-1-1.7-1-2,0V48.8L24.1,48.8z" fill="#FFFFFF" id="XMLID_29_"></path>
+		<path d="M7.4,47.4H6.3v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L7.4,47.4z" fill="#FFFFFF" id="XMLID_28_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M9.6,47.4H8.5v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L9.6,47.4z" fill="#FFFFFF" id="XMLID_27_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M11.8,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L11.8,47.4z" fill="#FFFFFF" id="XMLID_26_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M33,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L33,47.4z" fill="#FFFFFF" id="XMLID_25_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M35.2,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L35.2,47.4z" fill="#FFFFFF" id="XMLID_24_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M37.4,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L37.4,47.4z" fill="#FFFFFF" id="XMLID_23_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M10.5,37.3H9.4V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L10.5,37.3z" fill="#FFFFFF" id="XMLID_22_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M12.7,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L12.7,37.3z" fill="#FFFFFF" id="XMLID_21_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M14.9,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L14.9,37.3z" fill="#FFFFFF" id="XMLID_20_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M29.9,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L29.9,37.3z" fill="#FFFFFF" id="XMLID_19_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M32.1,37.3H31V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L32.1,37.3z" fill="#FFFFFF" id="XMLID_18_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M34.3,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L34.3,37.3z" fill="#FFFFFF" id="XMLID_17_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M20.2,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L20.2,31.4z" fill="#FFFFFF" id="XMLID_16_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M22.4,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L22.4,31.4z" fill="#FFFFFF" id="XMLID_15_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M24.6,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L24.6,31.4z" fill="#FFFFFF" id="XMLID_14_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M14.9,43.8c0.2,0.1,0.5,0.2,0.9,0.2l0,0    c0.8,0,1.2-0.3,1.2-0.3l0,0l0,0l0.1,0l3.9-8.4L14.9,43.8C14.9,43.8,14.9,43.8,14.9,43.8L14.9,43.8z" fill="#E20613" id="XMLID_13_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M17.7,43.8c0.2,0.1,0.5,0.1,1,0.1l0,0    c0.7,0,1.2-0.3,1.3-0.4l0,0c0,0,0,0,0,0l0,0l0,0l1.5-8.6L17.7,43.8C17.6,43.8,17.6,43.8,17.7,43.8L17.7,43.8z" fill="#E20613" id="XMLID_12_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M20.6,43.8c0.2,0.1,0.6,0.2,1.3,0.2l0,0    c0.8,0,1.2-0.1,1.4-0.2l0,0l-1.4-8.9L20.6,43.8C20.5,43.8,20.5,43.8,20.6,43.8L20.6,43.8z" fill="#E20613" id="XMLID_11_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M12.1,43.7c0.2,0.1,0.4,0.2,0.7,0.2l0,0    c0.5,0,1.1-0.2,1.4-0.3l0,0c0.1,0,0.1,0,0.1,0l0,0l0,0l5.9-8L12.1,43.7C12.1,43.7,12.1,43.7,12.1,43.7L12.1,43.7z" fill="#E20613" id="XMLID_10_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M28.8,43.8C28.8,43.8,28.8,43.8,28.8,43.8    l-6.1-8.6l3.9,8.4l0.1,0l0,0l0,0c0,0,0.4,0.3,1.2,0.3l0,0C28.2,44,28.5,43.9,28.8,43.8L28.8,43.8z" fill="#E20613" id="XMLID_9_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M26,43.8C26.1,43.8,26.1,43.8,26,43.8    L22.2,35l1.5,8.6l0,0l0,0c0,0,0,0,0,0l0,0c0.1,0.1,0.6,0.4,1.3,0.4l0,0C25.5,44,25.8,43.9,26,43.8L26,43.8z" fill="#E20613" id="XMLID_8_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M31.6,43.7C31.6,43.7,31.6,43.7,31.6,43.7    l-8.2-8.2l5.9,8l0,0l0,0c0,0,0,0,0.1,0l0,0c0.3,0.1,0.9,0.3,1.4,0.3l0,0C31.2,43.9,31.4,43.8,31.6,43.7L31.6,43.7z" fill="#E20613" id="XMLID_7_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#FFFFFF" id="XMLID_6_" points="22.8,33 21.9,34 20.9,33 21.9,32 22.8,33   "></polygon>
+		<polygon fill="#E20613" id="XMLID_5_" points="16.1,28.5 27.6,28.5 27.6,26.1 26.2,26.1 26.2,27.4 24.2,27.4 24.2,26 23,26     23,27.4 20.7,27.4 20.7,26 19.5,26 19.5,27.4 17.5,27.4 17.5,26.1 16.1,26.1 16.1,28.5   "></polygon>
+		<path d="M42.5,17.5H21.9l0,0h0l0,0H1.2c0,37.5,0,37.5,0,39.3    c0,1.7,0.7,3.5,3.4,4.2c2.7,0.7,12.6,3,14.4,3.5c2.4,0.6,2.9,2.5,2.9,2.5s0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5    c2.7-0.7,3.4-2.5,3.4-4.2C42.5,55,42.5,55,42.5,17.5L42.5,17.5z" fill="none" id="XMLID_4_" stroke="#1D1D1B" stroke-width="0.1317"></path>
+	</g>
+</g>
+</svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-top hidden-sm hidden-print"
+     id="search">
+    <div class="container">
+        <div class="grid">
+            <div class="grid-sm-12">
+                <div class="search" itemscope itemtype="http://schema.org/WebSite">
+    <meta itemprop="url" content="https://helsingborg.se">
+
+    <form method="get" action="https://helsingborg.se" itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction">
+        <meta itemprop="target" content="https://helsingborg.se/?s={search_term_string}">
+
+                    <label for="searchkeyword-1" class="sr-only">Sök på helsingborg.se</label>
+        
+        <div class="input-group input-group-lg">
+            <input itemprop="query-input" required id="searchkeyword-1" autocomplete="off" class="form-control form-control-lg" type="search" name="s" placeholder="Vad letar du efter?" value="">
+            <span class="input-group-addon-btn">
+                <input type="submit" class="btn btn-primary btn-lg" value="Sök">
+            </span>
+        </div>
+    </form>
+</div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="hidden-md hidden-lg hidden-print"><ul class="navbar nav-center navbar-creamy navbar-creamy-inner-shadow nav-horizontal"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31731"><a href="https://foretagare.helsingborg.se">Företagare</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31732"><a href="https://eservice.helsingborg.se/#">Självservice</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31729"><a href="http://www.visithelsingborg.com/">Besökare</a></li>
+</ul></nav>
+
+<div class="container hidden-print">
+    <div class="grid grid-va-middle u-py-3">
+        <div class="grid-auto text-center-xs text-center-sm">
+            <div class="grid grid-table grid-va-middle no-padding">
+                <div class="grid-xs-8 grid-sm-8 grid-md-12 text-left-sm text-left-xs">
+                    <a href="https://helsingborg.se" class="logotype" data-tooltip="Gå till startsidan"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 239.4 66.9" id="Layer_1" version="1.1" viewBox="0 0 239.4 66.9" x="0px" y="0px" xml:space="preserve">
+<g id="XMLID_2_">
+	<g id="XMLID_54_">
+		<polygon fill="#1D1D1B" id="XMLID_72_" points="74.5,41.6 74.5,34.4 66.2,34.4 66.2,41.6 63.6,41.6 63.6,25.1 66.2,25.1     66.2,32.1 74.5,32.1 74.5,25.1 77.2,25.1 77.2,41.6 74.5,41.6   "></polygon>
+		<polygon fill="#1D1D1B" id="XMLID_71_" points="83.3,41.6 83.3,25.1 92.1,25.1 91.3,27.4 85.9,27.4 85.9,32.1 91.3,32.1     91.3,34.3 85.9,34.3 85.9,39.4 92.2,39.4 92.2,41.6 83.3,41.6   "></polygon>
+		<polygon fill="#1D1D1B" id="XMLID_70_" points="97.6,41.6 97.6,25.1 100.2,25.1 100.2,39.4 106.3,39.4 106.3,41.6 97.6,41.6   "></polygon>
+		<path d="M114.9,41.9c-2.3,0-3.8-0.8-4.9-1.4l1.1-2c0.8,0.6,2.1,1.2,3.7,1.2c1.3,0,2.9-0.6,2.9-2.1    c0-2.5-4-3-6-5.3c-0.7-0.8-1.1-1.7-1.1-2.9c0-2.4,1.9-4.4,5.2-4.4c1.8,0,3.1,0.5,3.9,0.9l0,2.5c-1.1-0.7-2.4-1.1-3.8-1.1    c-1.4,0-2.6,0.6-2.6,1.9c0,3.3,7.2,3.2,7.2,8.2C120.5,40.1,118,41.9,114.9,41.9L114.9,41.9z" fill="#1D1D1B" id="XMLID_69_"></path>
+		<polygon fill="#1D1D1B" id="XMLID_68_" points="125.7,41.6 125.7,25.1 128.4,25.1 128.4,41.6 125.7,41.6   "></polygon>
+		<path d="M146.5,41.6l-7.8-10.1c-0.8-1-1.2-1.7-1.6-2.4h0c0,0.6,0,1.4,0,2.2v10.4h-2.6V25.1h2.7    l7.5,9.8c0.9,1.2,1.4,1.8,1.7,2.5h0c0-0.7,0-1.5,0-2.3v-9.9h2.6v16.5H146.5L146.5,41.6z" fill="#1D1D1B" id="XMLID_67_"></path>
+		<path d="M162.1,41.9c-5,0-8.3-3.5-8.3-8.3c0-5,3.6-8.6,9-8.6c2.1,0,3.7,0.5,4.8,0.9l0,2.5    c-1.2-0.6-2.8-1.2-4.6-1.2c-4.3,0-6.3,2.7-6.3,6.1c0,3.7,2.3,6.3,6.1,6.3c1.2,0,2.2-0.2,2.8-0.6v-5.7h2.6v7    C166.8,41.1,164.6,41.9,162.1,41.9L162.1,41.9z" fill="#1D1D1B" id="XMLID_66_"></path>
+		<path d="M178.9,34.4h-2.2v5h2.1c2.1,0,3.2-1,3.2-2.6C182,35.4,180.8,34.4,178.9,34.4L178.9,34.4z     M176.7,27.4v4.7h1.9c1.2,0,2.4-0.9,2.4-2.4c0-1.4-0.8-2.3-2.6-2.3H176.7L176.7,27.4z M178.9,41.6h-4.9V25.1h5    c3.2,0,4.6,2.1,4.6,4.1c0,1.5-0.7,2.9-2.1,3.5v0c1.7,0.4,3.2,2,3.2,4C184.7,39,183.2,41.6,178.9,41.6L178.9,41.6z" fill="#1D1D1B" id="XMLID_62_"></path>
+		<path d="M196.9,27.3c-3.3,0-5.6,2.4-5.6,6.2c0,3.8,2.2,6.2,5.6,6.2c3.3,0,5.5-2.4,5.5-6.2    C202.5,29.8,200.4,27.3,196.9,27.3L196.9,27.3z M191,27.4c1.5-1.5,3.6-2.4,6-2.4c2.6,0,4.8,1,6.3,2.6c1.4,1.5,2.1,3.5,2.1,5.9    c0,2.5-0.8,4.7-2.4,6.2c-1.5,1.5-3.5,2.3-6,2.3c-2.3,0-4.3-0.7-5.7-2c-1.7-1.5-2.6-3.8-2.6-6.3C188.6,31.1,189.5,28.9,191,27.4    L191,27.4z" fill="#1D1D1B" id="XMLID_59_"></path>
+		<path d="M214.2,27.4h-1.5v5.5h1.6c1.7,0,3-1.3,3-2.9C217.2,28.6,216.4,27.4,214.2,27.4L214.2,27.4z     M218.8,41.6c-2.6-4.3-3.9-6.5-4.5-6.7h-1.5v6.7h-2.6V25.1h4.1c4.1,0,5.7,2.1,5.7,4.6c0,2.3-1.5,3.7-3.1,4.4v0    c0.7,0.3,2.4,3.3,5,7.5H218.8L218.8,41.6z" fill="#1D1D1B" id="XMLID_56_"></path>
+		<path d="M233.3,41.9c-5,0-8.3-3.5-8.3-8.3c0-5,3.6-8.6,9-8.6c2.1,0,3.7,0.5,4.8,0.9l0,2.5    c-1.2-0.6-2.8-1.2-4.6-1.2c-4.3,0-6.3,2.7-6.3,6.1c0,3.7,2.3,6.3,6.1,6.3c1.2,0,2.2-0.2,2.8-0.6v-5.7h2.6v7    C238.1,41.1,235.9,41.9,233.3,41.9L233.3,41.9z" fill="#1D1D1B" id="XMLID_55_"></path>
+	</g>
+	<g id="XMLID_3_">
+		<path d="M42.5,17.5H21.9l0,0h0l0,0H1.2c0,37.5,0,37.5,0,39.3c0,1.7,0.7,3.5,3.4,4.2    c2.7,0.7,12.6,3,14.4,3.5c2.4,0.6,2.8,2.3,2.9,2.5v0l0,0l0,0v0c0-0.1,0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5    c2.7-0.7,3.4-2.5,3.4-4.2C42.5,55,42.5,55,42.5,17.5L42.5,17.5z" fill="#FFFFFF" id="XMLID_53_"></path>
+		<path d="M16.3,38.9h-9c-0.9,0.3-3,1.4-3,3.4    c0,0.7,0.3,1.2,0.6,1.5h6.5L16.3,38.9z" fill="#E20613" id="XMLID_52_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#E20613" id="XMLID_51_" points="21.7,33.7 21.8,33.8 21.9,33.8     22,33.7 26.7,38.2 26.7,29 17,29 17,38.2   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<path d="M11.9,44.2H5.3v6h0.8v2.4h3.7v-2.5h2.9v-5.7    C12.3,44.4,12.1,44.3,11.9,44.2z" fill="#E20613" id="XMLID_50_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M29.3,44.1c-0.2,0.1-0.7,0.4-1.4,0.4    c0,0,0,0,0,0c-0.7,0-1.1-0.2-1.4-0.3c-0.2,0.1-0.7,0.3-1.4,0.3c-0.7,0-1.2-0.2-1.5-0.4c-0.2,0.2-0.8,0.4-1.8,0.4    c-1,0-1.5-0.2-1.8-0.4c-0.3,0.1-0.8,0.4-1.5,0.4c-0.7,0-1.2-0.2-1.4-0.3c-0.2,0.1-0.7,0.3-1.4,0.3c-0.7,0-1.2-0.3-1.4-0.4    c-0.2,0.1-0.7,0.2-1.2,0.3v5.7h2.1v2.4H19v-2.3h5.6v2.3h3.7v-2.4h2.1v-5.7C30,44.4,29.5,44.2,29.3,44.1z" fill="#E20613" id="XMLID_49_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M36.3,38.9h-9l4.9,4.8h6.5    c0.3-0.3,0.6-0.8,0.6-1.5C39.4,40.2,37.2,39.2,36.3,38.9z" fill="#E20613" id="XMLID_48_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M31,44.4v5.7h2.9v2.5h3.7v-2.3v-0.1h0.9v-6    h-6.6C31.6,44.3,31.4,44.4,31,44.4z" fill="#E20613" id="XMLID_47_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M38.3,50.9v2.4h-5.1v-2.5h-4.1v2.4h-5.2V51    h-4.2v2.3h-5.2v-2.4h-4.1v2.5H5.4v-2.4H1.2c0,4.5,0,5,0,5.9c0,1.7,0.7,3.5,3.4,4.2c2.7,0.7,12.6,3,14.4,3.5    c2.4,0.6,2.9,2.5,2.9,2.5s0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5c2.7-0.7,3.4-2.5,3.4-4.2c0-0.9,0-1.3,0-5.9H38.3z" fill="#E20613" id="XMLID_46_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#E20613" id="XMLID_45_" points="18,25.6 18,26.9 18.9,26.9     18.9,25.5 21.3,25.5 21.3,26.9 22.4,26.9 22.4,25.5 24.8,25.5 24.8,26.9 25.7,26.9 25.7,25.6 26.1,25.6 21.9,22.3 21.9,22.3     21.9,22.3 17.6,25.6   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<path d="M21.9,22.1c0.2,0,0.4-0.2,0.4-0.4c0-0.2-0.2-0.4-0.4-0.4c-0.2,0-0.4,0.2-0.4,0.4    C21.5,21.9,21.6,22.1,21.9,22.1" fill="#E20613" id="XMLID_44_"></path>
+		<path d="M22.6,19.9c0,0-0.2,0.1-0.3,0.1l0,0c0,0-0.1,0-0.1,0c0,0,0,0,0,0c0-0.1,0-0.2,0-0.2    c0-0.1,0.1-0.3,0.1-0.3l0.1-0.2l-0.2,0.1c0,0-0.2,0.1-0.3,0.1c-0.1,0-0.3-0.1-0.3-0.1l-0.2-0.1l0.1,0.2c0,0,0.1,0.2,0.1,0.3    c0,0.1,0,0.2,0,0.2c0,0,0,0,0,0c0,0-0.1,0-0.1,0c-0.1,0-0.3-0.1-0.3-0.1l-0.1,0v0.5c0,0.1,0,0.4,0,0.4l0,0.1l0.1-0.1    c0,0,0.1-0.1,0.2-0.1c0,0,0.1,0,0.1,0c0,0,0,0,0,0c0,0,0,0.1,0,0.1c0,0.1-0.1,0.4-0.1,0.4l0,0.1l0,0c0.1-0.1,0.3-0.2,0.5-0.2    c0.2,0,0.4,0.1,0.5,0.2l0,0l0-0.1c0,0-0.1-0.3-0.1-0.4c0,0,0-0.1,0-0.1c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0.1,0,0.2,0.1,0.2,0.1    l0.1,0.1l0-0.1c0,0,0-0.2,0-0.4v-0.5L22.6,19.9L22.6,19.9z" fill="#E20613" id="XMLID_43_"></path>
+		<path d="M9.3,27c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5    C8.8,27.2,9,27,9.3,27" fill="#E20613" id="XMLID_42_"></path>
+		<polygon fill="#E20613" id="XMLID_41_" points="9.6,28.3 9.1,28.3 9.1,29.9 9.6,29.9 9.6,28.3   "></polygon>
+		<path d="M34.4,27c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5    C33.9,27.2,34.1,27,34.4,27" fill="#E20613" id="XMLID_40_"></path>
+		<polygon fill="#E20613" id="XMLID_39_" points="34.6,28.3 34.2,28.3 34.2,29.9 34.6,29.9 34.6,28.3   "></polygon>
+		<polygon fill="#E20613" id="XMLID_38_" points="42.2,0 42.2,0.6 41.2,0.6 41.2,0 39.8,0 39.8,0.6 38.8,0.6 38.8,0 37.3,0     37.3,1.7 38,1.7 38,4.4 36.9,4.4 36.9,6 34.8,6 34.8,4.4 33.7,4.4 33.7,1.7 34.4,1.7 34.4,0 32.9,0 32.9,0.6 31.9,0.6 31.9,0     30.5,0 30.5,0.6 29.4,0.6 29.4,0 28,0 28,1.7 28.7,1.7 28.7,4.4 27.6,4.4 27.6,6 25.5,6 25.5,4.4 24.4,4.4 24.4,1.7 25,1.7 25,0     23.6,0 23.6,0.6 22.6,0.6 22.6,0 21.1,0 21.1,0.6 20.1,0.6 20.1,0 18.7,0 18.7,1.7 19.3,1.7 19.3,4.4 18.2,4.4 18.2,6 16.1,6     16.1,4.4 15.1,4.4 15.1,1.7 15.7,1.7 15.7,0 14.3,0 14.3,0.6 13.3,0.6 13.3,0 11.8,0 11.8,0.6 10.8,0.6 10.8,0 9.3,0 9.3,1.7     10,1.7 10,4.4 8.9,4.4 8.9,6 6.8,6 6.8,4.4 5.7,4.4 5.7,1.7 6.4,1.7 6.4,0 4.9,0 4.9,0.6 3.9,0.6 3.9,0 2.5,0 2.5,0.6 1.5,0.6     1.5,0 0,0 0,1.7 0.7,1.7 0.7,6.1 3.2,8.8 3.2,13.1 2,13.1 2,17.5 41.8,17.5 41.8,13.1 40.5,13.1 40.5,8.8 43,6.1 43,1.7 43.7,1.7     43.7,0 42.2,0   "></polygon>
+		<rect fill="#E20613" height="3.5" id="XMLID_37_" stroke="#FFFFFF" stroke-width="5.756000e-02" width="8.7" x="27.2" y="34.8"></rect>
+		<polygon fill="#E20613" id="XMLID_36_" points="27.2,30.2 27.2,34.3 37.8,34.3     34.8,30.2   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<polygon fill="#E20613" id="XMLID_35_" points="16.5,30.2 8.9,30.2 5.9,34.3     16.5,34.3   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<rect fill="#E20613" height="3.5" id="XMLID_34_" stroke="#FFFFFF" stroke-width="5.756000e-02" width="8.7" x="7.8" y="34.8"></rect>
+		<path d="M16.4,48.8h-1.6v-2.3c0.2-0.8,1.3-0.8,1.6,0V48.8L16.4,48.8z" fill="#FFFFFF" id="XMLID_33_"></path>
+		<path d="M22.8,48.8h-2v-2.5c0.3-1,1.7-1,2,0V48.8L22.8,48.8z" fill="#FFFFFF" id="XMLID_32_"></path>
+		<path d="M19.6,48.8h-2v-2.5c0.3-1,1.7-1,2,0V48.8L19.6,48.8z" fill="#FFFFFF" id="XMLID_31_"></path>
+		<path d="M27.3,48.8h1.6v-2.3c-0.2-0.8-1.3-0.8-1.6,0V48.8L27.3,48.8z" fill="#FFFFFF" id="XMLID_30_"></path>
+		<path d="M24.1,48.8h2v-2.5c-0.3-1-1.7-1-2,0V48.8L24.1,48.8z" fill="#FFFFFF" id="XMLID_29_"></path>
+		<path d="M7.4,47.4H6.3v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L7.4,47.4z" fill="#FFFFFF" id="XMLID_28_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M9.6,47.4H8.5v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L9.6,47.4z" fill="#FFFFFF" id="XMLID_27_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M11.8,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L11.8,47.4z" fill="#FFFFFF" id="XMLID_26_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M33,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L33,47.4z" fill="#FFFFFF" id="XMLID_25_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M35.2,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L35.2,47.4z" fill="#FFFFFF" id="XMLID_24_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M37.4,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L37.4,47.4z" fill="#FFFFFF" id="XMLID_23_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M10.5,37.3H9.4V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L10.5,37.3z" fill="#FFFFFF" id="XMLID_22_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M12.7,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L12.7,37.3z" fill="#FFFFFF" id="XMLID_21_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M14.9,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L14.9,37.3z" fill="#FFFFFF" id="XMLID_20_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M29.9,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L29.9,37.3z" fill="#FFFFFF" id="XMLID_19_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M32.1,37.3H31V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L32.1,37.3z" fill="#FFFFFF" id="XMLID_18_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M34.3,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L34.3,37.3z" fill="#FFFFFF" id="XMLID_17_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M20.2,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L20.2,31.4z" fill="#FFFFFF" id="XMLID_16_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M22.4,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L22.4,31.4z" fill="#FFFFFF" id="XMLID_15_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M24.6,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L24.6,31.4z" fill="#FFFFFF" id="XMLID_14_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M14.9,43.8c0.2,0.1,0.5,0.2,0.9,0.2l0,0    c0.8,0,1.2-0.3,1.2-0.3l0,0l0,0l0.1,0l3.9-8.4L14.9,43.8C14.9,43.8,14.9,43.8,14.9,43.8L14.9,43.8z" fill="#E20613" id="XMLID_13_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M17.7,43.8c0.2,0.1,0.5,0.1,1,0.1l0,0    c0.7,0,1.2-0.3,1.3-0.4l0,0c0,0,0,0,0,0l0,0l0,0l1.5-8.6L17.7,43.8C17.6,43.8,17.6,43.8,17.7,43.8L17.7,43.8z" fill="#E20613" id="XMLID_12_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M20.6,43.8c0.2,0.1,0.6,0.2,1.3,0.2l0,0    c0.8,0,1.2-0.1,1.4-0.2l0,0l-1.4-8.9L20.6,43.8C20.5,43.8,20.5,43.8,20.6,43.8L20.6,43.8z" fill="#E20613" id="XMLID_11_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M12.1,43.7c0.2,0.1,0.4,0.2,0.7,0.2l0,0    c0.5,0,1.1-0.2,1.4-0.3l0,0c0.1,0,0.1,0,0.1,0l0,0l0,0l5.9-8L12.1,43.7C12.1,43.7,12.1,43.7,12.1,43.7L12.1,43.7z" fill="#E20613" id="XMLID_10_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M28.8,43.8C28.8,43.8,28.8,43.8,28.8,43.8    l-6.1-8.6l3.9,8.4l0.1,0l0,0l0,0c0,0,0.4,0.3,1.2,0.3l0,0C28.2,44,28.5,43.9,28.8,43.8L28.8,43.8z" fill="#E20613" id="XMLID_9_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M26,43.8C26.1,43.8,26.1,43.8,26,43.8    L22.2,35l1.5,8.6l0,0l0,0c0,0,0,0,0,0l0,0c0.1,0.1,0.6,0.4,1.3,0.4l0,0C25.5,44,25.8,43.9,26,43.8L26,43.8z" fill="#E20613" id="XMLID_8_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M31.6,43.7C31.6,43.7,31.6,43.7,31.6,43.7    l-8.2-8.2l5.9,8l0,0l0,0c0,0,0,0,0.1,0l0,0c0.3,0.1,0.9,0.3,1.4,0.3l0,0C31.2,43.9,31.4,43.8,31.6,43.7L31.6,43.7z" fill="#E20613" id="XMLID_7_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#FFFFFF" id="XMLID_6_" points="22.8,33 21.9,34 20.9,33 21.9,32 22.8,33   "></polygon>
+		<polygon fill="#E20613" id="XMLID_5_" points="16.1,28.5 27.6,28.5 27.6,26.1 26.2,26.1 26.2,27.4 24.2,27.4 24.2,26 23,26     23,27.4 20.7,27.4 20.7,26 19.5,26 19.5,27.4 17.5,27.4 17.5,26.1 16.1,26.1 16.1,28.5   "></polygon>
+		<path d="M42.5,17.5H21.9l0,0h0l0,0H1.2c0,37.5,0,37.5,0,39.3    c0,1.7,0.7,3.5,3.4,4.2c2.7,0.7,12.6,3,14.4,3.5c2.4,0.6,2.9,2.5,2.9,2.5s0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5    c2.7-0.7,3.4-2.5,3.4-4.2C42.5,55,42.5,55,42.5,17.5L42.5,17.5z" fill="none" id="XMLID_4_" stroke="#1D1D1B" stroke-width="0.1317"></path>
+	</g>
+</g>
+</svg></a>
+                </div>
+
+                                    <div class="grid-xs-4 grid-sm-4 text-right-sm text-right-xs hidden-md hidden-lg  u-hidden@xl">
+                        <a href="#mobile-menu" class=" menu-trigger" data-target="#mobile-menu"><span
+                                    class="menu-icon"></span> Meny</a>
+                    </div>
+                            </div>
+        </div>
+
+        
+                    <div class="grid-auto text-center-sm text-center-xs text-right hidden-xs hidden-sm">
+
+                                    <div>
+                        <nav class="menu-header-tabs"><ul class="nav nav-tabs"><li id="menu-item-31731" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31731"><a href="https://foretagare.helsingborg.se">Företagare</a></li>
+<li id="menu-item-31732" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31732"><a href="https://eservice.helsingborg.se/#">Självservice</a></li>
+<li id="menu-item-31729" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-31729"><a href="http://www.visithelsingborg.com/">Besökare</a></li>
+</ul></nav>
+
+                                                    <form class="search top-search hidden-xs hidden-sm" method="get" action="https://helsingborg.se">
+    <label for="searchkeyword-2" class="sr-only">Sök på helsingborg.se</label>
+    <div class="input-group">
+        <input id="searchkeyword-2" autocomplete="off" class="form-control" type="search" name="s" placeholder="Vad letar du efter?" value="">
+        <span class="input-group-addon-btn">
+            <input type="submit" class="btn btn-primary" value="Sök">
+        </span>
+    </div>
+</form>
+                                            </div>
+                
+                            </div>
+            </div>
+
+</div>
+
+
+    <nav class="navbar navbar-mainmenu hidden-xs hidden-sm hidden-print sticky-scroll ">
+        <div class="container">
+            <div class="grid">
+                <div class="grid-sm-12">
+                    <ul id="main-menu" class="nav nav-justify hidden-xs hidden-sm"><li id="menu-item-561025" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561025"><a href="https://helsingborg.se/arbete/">Arbete</a></li>
+<li id="menu-item-561026" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561026"><a href="https://helsingborg.se/bo-bygga-och-miljo/">Bo, bygga och miljö</a></li>
+<li id="menu-item-561027" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item menu-item-561027"><a href="https://helsingborg.se/forskola-och-utbildning/">Förskola och utbildning</a></li>
+<li id="menu-item-561028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561028"><a href="https://helsingborg.se/kommun-och-politik/">Kommun och politik</a></li>
+<li id="menu-item-561022" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561022"><a href="https://helsingborg.se/omsorg-och-stod/">Omsorg och stöd</a></li>
+<li id="menu-item-561024" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561024"><a href="https://helsingborg.se/trafik-och-stadsplanering/">Trafik och stadsplanering</a></li>
+<li id="menu-item-561023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-561023"><a href="https://helsingborg.se/uppleva-och-gora/">Uppleva och göra</a></li>
+</ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+            <nav id="mobile-menu"
+             class="nav-mobile-menu nav-toggle nav-toggle-expand hidden-md hidden-lg hidden-print">
+            <form class="search" method="get" action="/">
+    <label for="searchkeyword-mobile" class="sr-only">Sök på helsingborg.se</label>
+
+    <div class="input-group">
+        <input id="searchkeyword-mobile" autocomplete="off" class="form-control" type="search" name="s" placeholder="Vad letar du efter?" value="">
+        <span class="input-group-addon-btn">
+            <input type="submit" class="btn btn-primary" value="Sök">
+        </span>
+    </div>
+</form>
+
+<ul class="nav-mobile"><ul id="" class="nav"><li class="has-sub-menu page-561025"><a href="https://helsingborg.se/arbete/">Arbete</a><button data-load-submenu="6" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-561026"><a href="https://helsingborg.se/bo-bygga-och-miljo/">Bo, bygga och miljö</a><button data-load-submenu="186" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="current current-menu-item is-expanded has-sub-menu page-561027"><a href="https://helsingborg.se/forskola-och-utbildning/">Förskola och utbildning</a><button data-load-submenu="1410" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button><ul class="sub-menu"><li class="has-sub-menu page-339305"><a href="https://helsingborg.se/forskola-och-utbildning/helsingborgs-stads-skolor/">Helsingborgs stads skolor - din kommunala skola</a><button data-load-submenu="339305" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-1774"><a href="https://helsingborg.se/forskola-och-utbildning/forskola/">Förskola</a><button data-load-submenu="1774" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-1862"><a href="https://helsingborg.se/forskola-och-utbildning/grundskola/">Grundskola</a><button data-load-submenu="1862" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-1966"><a href="https://helsingborg.se/forskola-och-utbildning/gymnasium/">Gymnasieskola</a><button data-load-submenu="1966" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-2049"><a href="https://helsingborg.se/forskola-och-utbildning/sarskola/">Särskola</a><button data-load-submenu="2049" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="page-2047"><a href="https://helsingborg.se/forskola-och-utbildning/sok-och-jamfor-forskolor-grundskolor-och-gymnasieskolor/">Jämför förskolor, grundskolor och gymnasieskolor</a></li><li class="page-297384"><a href="https://helsingborg.se/forskola-och-utbildning/skolmat/">Mat i förskolor och skolor</a></li><li class="has-sub-menu page-31412"><a href="https://helsingborg.se/forskola-och-utbildning/modersmal/">Modersmål</a><button data-load-submenu="31412" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="page-2294"><a href="https://helsingborg.se/forskola-och-utbildning/natur-kultur-teknik-i-skolan/">Natur, kultur, teknik</a></li><li class="has-sub-menu page-2067"><a href="https://helsingborg.se/forskola-och-utbildning/vuxenutbildning/">Vuxenutbildning</a><button data-load-submenu="2067" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="page-2292"><a href="https://helsingborg.se/forskola-och-utbildning/jamfor-sfi-skolor-via-lista-och-karta/">Jämför sfi-skolor via lista och karta</a></li></ul></li><li class="has-sub-menu page-561028"><a href="https://helsingborg.se/kommun-och-politik/">Kommun och politik</a><button data-load-submenu="2555" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-561022"><a href="https://helsingborg.se/omsorg-och-stod/">Omsorg och stöd</a><button data-load-submenu="5220" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-561024"><a href="https://helsingborg.se/trafik-och-stadsplanering/">Trafik och stadsplanering</a><button data-load-submenu="3334" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-561023"><a href="https://helsingborg.se/uppleva-och-gora/">Uppleva och göra</a><button data-load-submenu="4027" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li></ul></ul>
+
+
+        </nav>
+        </header>
+
+    
+    
+
+
+    <main id="main-content" class="clearfix main-content">
+        
+<div class="container main-container u-pb-5">
+
+    <div class="grid breadcrumbs-wrapper u-mb-6 u-mt-3">
+    <div class="grid-lg-12">
+        <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList"><li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="https://helsingborg.se" title="Hem">
+                            <span itemprop="name">Hem</span><meta itemprop="position" content="1"></a>
+                        </li>
+<li itemscope itemprop="itemListElement" itemtype="http://schema.org/ListItem">
+                                <span itemprop="name">Förskola och utbildning</span><meta itemprop="position" content="2" />
+                            </li></ol>
+    </div>
+</div>
+
+    <div class="grid ">
+        <aside class="grid-md-4 grid-lg-3 sidebar-left-sidebar hidden-print ">
+    
+    
+        <nav id="sidebar-menu">
+                    <ul id="" class="nav-aside hidden-xs hidden-sm"><li class="has-sub-menu page-339305"><a href="https://helsingborg.se/forskola-och-utbildning/helsingborgs-stads-skolor/">Helsingborgs stads skolor - din kommunala skola</a><button data-load-submenu="339305" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-1774"><a href="https://helsingborg.se/forskola-och-utbildning/forskola/">Förskola</a><button data-load-submenu="1774" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-1862"><a href="https://helsingborg.se/forskola-och-utbildning/grundskola/">Grundskola</a><button data-load-submenu="1862" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-1966"><a href="https://helsingborg.se/forskola-och-utbildning/gymnasium/">Gymnasieskola</a><button data-load-submenu="1966" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="has-sub-menu page-2049"><a href="https://helsingborg.se/forskola-och-utbildning/sarskola/">Särskola</a><button data-load-submenu="2049" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="page-2047"><a href="https://helsingborg.se/forskola-och-utbildning/sok-och-jamfor-forskolor-grundskolor-och-gymnasieskolor/">Jämför förskolor, grundskolor och gymnasieskolor</a></li><li class="page-297384"><a href="https://helsingborg.se/forskola-och-utbildning/skolmat/">Mat i förskolor och skolor</a></li><li class="has-sub-menu page-31412"><a href="https://helsingborg.se/forskola-och-utbildning/modersmal/">Modersmål</a><button data-load-submenu="31412" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="page-2294"><a href="https://helsingborg.se/forskola-och-utbildning/natur-kultur-teknik-i-skolan/">Natur, kultur, teknik</a></li><li class="has-sub-menu page-2067"><a href="https://helsingborg.se/forskola-och-utbildning/vuxenutbildning/">Vuxenutbildning</a><button data-load-submenu="2067" data-load-blog-id="1"><span class="sr-only">Show submenu</span><span class="icon"></span></button></li><li class="page-2292"><a href="https://helsingborg.se/forskola-och-utbildning/jamfor-sfi-skolor-via-lista-och-karta/">Jämför sfi-skolor via lista och karta</a></li></ul>
+                </nav>
+    
+    <!-- Use right sidebar to the left in small-ish devices -->
+    
+    
+</aside>
+
+        <div class="grid-md-8 grid-lg-6 grid-print-12" id="readspeaker-read">
+
+                            <div class="grid grid--columns sidebar-content-area sidebar-content-area-top">
+                    <div class="modularity-mod-notice modularity-mod-notice-646911 grid-md-12"><div class="notice info notice-md">
+    <div class="grid grid-table-md grid-va-middle no-margin no-padding">
+
+        
+        <div class="grid-auto">
+            
+            <a href="https://helsingborg.se/nyheter/information-om-coronavirussjukdomen-covid-19/">Information om coronaviruset - Håll ut och håll avstånd.</a><br />
+<br />
+<a href="https://helsingborg.se/nyheter/information-about-corona-virus-and-covid-19-in-other-languages/">Information about corona in other languages (helsingborg.se).</a>
+
+        </div>
+    </div>
+</div>
+</div>                </div>
+            
+                            
+
+                <article id="article" class="clearfix u-mb-4">
+    <h1>Förskola och utbildning</h1>
+
+    <ul class="nav nav-help nav-accessibility nav-horizontal hidden-print rs_skip rs_preserve">
+				<li>
+			<a href="https://helsingborg.se/forskola-och-utbildning?readable=1" class=""><i class="pricon pricon-easy-read"></i> Lättläst</a>
+		</li>
+		</ul>
+
+
+    
+            
+            <p class="lead">Här kan du läsa mer om olika skolformer, vilka regler som gäller och vilka val du kan göra.</p>
+            <p>I Helsingborg kan du som förälder välja både kommunala skolor inom <a href="https://helsingborg.se/forskola-och-utbildning/helsingborgs-stads-skolor/">Helsingborgs stads skolor</a> och fristående skolor, som drivs av andra än kommunen.</p>
+
+            
+            
+</article>
+            
+                            <div class="grid grid--columns sidebar-content-area sidebar-content-area-bottom">
+                    <div class="grid-sm-12"><div class="modularity-mod-index modularity-mod-index-52162"><div class="grid" data-equal-container>
+    
+        <div class="grid-md-6">
+        <a href="https://helsingborg.se/forskola-och-utbildning/forskola/" class="box box-index" data-equal-item>
+                            <img class="box-image" src="https://helsingborg.se/wp-content/uploads/2017/05/slf018901-1200px-e1521453434840-800x450.jpg" alt="Förskola">
+            
+            <div class="box-content">
+                <h5 class="box-index-title link-item">Förskola</h5>
+                Om du är förälder och arbetar eller studerar kan ditt barn gå i förskola från 1 års ålder tills att barnet börjar i förskoleklass. Barn till föräldrar som är arbetssökande eller föräldralediga för ett annat barn, får ha sina barn 15 timmar i veckan i förskolan.
+
+            </div>
+        </a>
+    </div>
+        <div class="grid-md-6">
+        <a href="https://helsingborg.se/forskola-och-utbildning/grundskola/" class="box box-index" data-equal-item>
+                            <img class="box-image" src="https://helsingborg.se/wp-content/uploads/2015/01/grundskola_169-800x450.jpg" alt="Grundskola">
+            
+            <div class="box-content">
+                <h5 class="box-index-title link-item">Grundskola</h5>
+                I Helsingborg kan du som förälder tillsammans med ditt barn välja den grundskola som du tycker passar ditt barn bäst. Det kan vara en kommunal eller fristående skola.
+            </div>
+        </a>
+    </div>
+        <div class="grid-md-6">
+        <a href="https://helsingborg.se/forskola-och-utbildning/gymnasium/" class="box box-index" data-equal-item>
+                            <img class="box-image" src="https://helsingborg.se/wp-content/uploads/2017/05/gymnasium_169-800x450.jpg" alt="Gymnasieskola">
+            
+            <div class="box-content">
+                <h5 class="box-index-title link-item">Gymnasieskola</h5>
+                Du kan välja din gymnasieutbildning både bland kommunala och fristående gymnasieskolor.
+            </div>
+        </a>
+    </div>
+        <div class="grid-md-6">
+        <a href="https://helsingborg.se/forskola-och-utbildning/vuxenutbildning/" class="box box-index" data-equal-item>
+                            <img class="box-image" src="https://helsingborg.se/wp-content/uploads/2015/01/utbildningsmassa-varen-2020-scaled-800x450.jpg" alt="Vuxenutbildning">
+            
+            <div class="box-content">
+                <h5 class="box-index-title link-item">Vuxenutbildning</h5>
+                Inom den kommunala vuxenutbildningen studerar du på olika nivåer och med olika mål. Du kanske vill bli lärling, skaffa yrkesutbildning eller läsa upp betyg. Här hittar du information om vad du kan studera, hur du ansöker och vilket stöd du kan få.
+            </div>
+        </a>
+    </div>
+    </div>
+</div></div><div class="grid-sm-12"><div class="modularity-mod-index modularity-mod-index-243509"><div class="grid" data-equal-container>
+    
+        <div class="grid-md-12">
+        <a href="https://helsingborg.se/forskola-och-utbildning/sok-och-jamfor-forskolor-grundskolor-och-gymnasieskolor/" class="box box-index" data-equal-item>
+            
+            <div class="box-content">
+                <h5 class="box-index-title link-item">Jämför förskolor, grundskolor och gymnasieskolor</h5>
+                I vår jämförelsetjänst kan du hitta en skola som har en viss inriktning eller finns i ett speciellt geografiskt område. Här kan du också jämföra förskolor, grundskolor och gymnasieskolor i Helsingborg. 
+            </div>
+        </a>
+    </div>
+    </div>
+</div></div><div class="grid-sm-12"><div class="modularity-mod-posts modularity-mod-posts-258156"><div class="box box-panel box-panel-secondary">
+        <h4 class="box-title">Nyheter</h4>
+    
+    <ul>
+                                <li>
+                                    <a href="https://helsingborg.se/nyheter/arets-grundskoleval-skolplaceringarna-ar-klara-2/">
+                                                            <span class="link-item title">Årets grundskoleval: Skolplaceringarna är klara</span>
+                    
+                                        <time class="date text-sm text-dark-gray">2020-04-07</time>
+                                    </a>
+            </li>
+                        <li>
+                                    <a href="https://helsingborg.se/nyheter/information-om-hur-helsingborgs-stads-skolor-hanterar-utbrottet-av-coronaviruset/">
+                                                            <span class="link-item title">Information om hur Helsingborgs stads skolor hanterar utbrottet av coronaviruset</span>
+                    
+                                        <time class="date text-sm text-dark-gray">2020-04-01</time>
+                                    </a>
+            </li>
+                    
+            </ul>
+</div>
+</div></div><div class="grid-sm-12"><div class="modularity-mod-text modularity-mod-text-214973"><div class="box box-panel box-panel-secondary text-md">
+        <h4 class="box-title">Synpunkter och klagomål</h4>
+    
+    <div class="box-content">
+        <p>Om du är missnöjd med något kring utbildningen har du möjlighet att klaga.</p>
+<p><a href="https://helsingborg.se/forskola-och-utbildning/synpunkter-och-klagomal/">Så här gör du om du vill lämna synpunkter eller klagomål.</a></p>
+    </div>
+</div>
+</div></div>                </div>
+            
+            
+            <div class="hidden-xs hidden-sm hidden-print">
+                <div id="customer-feedback" class="box box-index creamy gutter hidden-print customer-feedback-container">
+    <input type="hidden" name="customer-feedback-post-id" value="1410">
+
+    <div class="grid">
+        <div class="grid-xs-12">
+            <h4 class="box-title "><i class="pricon pricon-question-o"></i> Fick du hjälp av informationen på sidan?</h4>
+            <p class="text-sm">Här kan du lämna feedback om informationen på sidan. Du får inte svar på din feedback. Har du frågor eller vill komma i kontakt med Helsingborgs stad kan du vända dig till <a href="https://helsingborg.se/kontaktcenter">Kontaktcenter</a>. Tack för att du hjälper oss att göra webbplatsen bättre.</p>
+        </div>
+        <div class="grid-xs-12">
+            <div class="gutter gutter-top gutter-sm">
+                                    <div class="customer-feedback-answers">
+                        <button rel="nofollow" class="btn btn-success" value="yes"
+                                data-action="customer-feedback-submit-response">Ja</button>
+                        <button rel="nofollow" class="btn btn-error" value="no"
+                                data-action="customer-feedback-submit-response">Nej</button>
+                    </div>
+                    <div class="customer-feedback-comment text-left gutter gutter-top gutter-sm" style="display: none;">
+                                                    <div class="form-group customer-feedback-topics">
+                                <label for="customer-feedback-comment-topic-1">Ämne</label>
+                                <p class="text-sm block-level">Komplettera din feedback genom att välja en kategori och ange kommentar.</p>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18928"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Informationen på sidan är felaktig och behöver uppdateras                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18929"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Jag har förslag på kompletterande information till sidan                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18930"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Jag hittar inte den information jag söker på sidan                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18931"
+                                               topic-description="Till exempel länkar som inte fungerar eller som leder till fel sida, långsam laddning eller annat tekniskt problem."
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Jag upplever tekniska problem på sidan                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18932"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability="1"> Övrigt                                    </label>
+                                                            </div>
+                            <div class="form-group">
+                                <div class="topic-description notice info" style="display:none;"></div>
+                            </div>
+                                                <div class="form-group">
+                            <label for="customer-feedback-comment-text-1" class="feedback-label-yes"
+                                   style="display: none;">Kommentar</label>
+                            <label for="customer-feedback-comment-text-1" class="feedback-label-no"
+                                   style="display: none;">Hur kan vi förbättra vår information?</label>
+                            <p class="text-sm block-level">Observera att din kommentar blir en allmän handling som kan komma att läsas av andra.</p>
+                            <textarea class="form-control" style="height: 100px;"
+                                      id="customer-feedback-comment-text-1"
+                                      name="customer-feedback-comment-text"></textarea>
+
+                            <div class="grid">
+                                <div class="grid-md-12">
+                                                                            <p class="text-sm gutter gutter-sm gutter-bottom">
+                                            I det här formuläret samlar vi in personuppgifter om dig för att [det formuläret ska användas till]. Uppgifterna kommer inte att hanteras för något annat syfte, och kommer att raderas när [ärendet är avslutat]. <a href="/toppmeny/om-webbplatsen/sa-har-behandlar-vi-dina-personuppgifter/">Läs om hur Helsingborgs stad hanterar personuppgifter</a>.                                        </p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group" style="display:none;">
+                            <label for="customer-feedback-comment-email-1">E-postadress</label>
+                            <p class="text-sm block-level">Ange din e-postadress för att få återkoppling på din feedback.</p>
+                            <input type="email" id="customer-feedback-comment-email-1"
+                                   name="customer-feedback-comment-email" value="">
+                        </div>
+                                                    <div class="form-group">
+                                <div class="g-recaptcha"></div>
+                            </div>
+                                                <div class="form-group">
+                            <button rel="nofollow" style="margin-top:5px;" class="btn btn-submit"
+                                    data-action="customer-feedback-submit-comment">Skicka</button>
+                        </div>
+                    </div>
+                    <div class="customer-feedback-thanks" style="display: none;">
+                        <div class="notice success">Tack för ditt svar</div>
+                    </div>
+                    <div class="customer-feedback-error" style="display: none;">
+                        <div class="notice warning">Något gick fel, vänligen försök igen senare.</div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer u-mb-4">
+        <div class="grid grid--columns">
+        <div class="grid-xs-12">
+            <div class="box box-border gutter gutter-horizontal no-margin hidden-print">
+                <div class="gutter gutter-vertical gutter-sm">
+                <div class="grid grid-table grid-va-middle no-margin no-padding">
+                    <div class="grid-auto">
+                        <i class="pricon pricon-share pricon-lg" style="margin-right:5px;"></i> <strong>Dela sidan:</strong> <span class="u-hidden@xs">Förskola och utbildning</span>
+                    </div>
+                    <div class="grid-fit-content text-right-md text-right-lg">
+                        <!-- Social -->
+<ul class="share share-social share-social-icon-md share-horizontal share-no-labels hidden-print inline-block">
+    <li>
+        <a class="share-social-facebook" data-action="share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://helsingborg.se/?socialShareId=339305" data-tooltip="Dela på Facebook">
+            <i class="pricon pricon-facebook"></i>
+            <span>Dela på Facebook</span>
+        </a>
+    </li>
+    <li>
+        <a class="share-social-twitter" data-action="share-popup" href="http://twitter.com/share?url=https://helsingborg.se/?socialShareId=339305" data-tooltip="Dela på Twitter">
+            <i class="pricon pricon-twitter"></i>
+            <span>Dela på Twitter</span>
+        </a>
+    </li>
+    <li>
+        <a class="share-social-linkedin" data-action="share-popup" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://helsingborg.se/?socialShareId=339305&amp;title=F%C3%B6rskola+och+utbildning" data-tooltip="Dela på LinkedIn">
+            <i class="pricon pricon-linkedin"></i>
+            <span>Dela på LinkedIn</span>
+        </a>
+    </li>
+    <li>
+        <a class="share-social-email" data-action="share-email" href="#modal-target-1410" data-tooltip="Dela med e-post">
+            <i class="pricon pricon-email"></i>
+            <span>Dela med e-post</span>
+        </a>
+        <div id="modal-target-1410" class="modal modal-backdrop-2 modal-xs text-left" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content material-shadow-lg">
+        <form class="social-share-email">
+            <div class="modal-header">
+                <a class="btn btn-close" href="#close"></a>
+                <h2 class="modal-title">Dela med e-post</h2>
+            </div>
+            <div class="modal-body">
+                <article>
+                    <div class="form-group">
+                        <label>URL</label>
+                        <a href="https://helsingborg.se/forskola-och-utbildning/" target="_blank">https://helsingborg.se/forskola-och-utbildning/</a>
+                    </div>
+                                            <div class="form-group">
+                            <label for="sender-name">Ditt namn <span class="text-danger">*</span></label>
+                            <input type="text" name="sender_name" id="sender-name" placeholder="Ditt namn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-email">Din e-postadress <span class="text-danger">*</span></label>
+                            <input type="email" name="sender_email" id="sender-email" placeholder="Din e-postadress" required>
+                        </div>
+                                        <div class="form-group">
+                        <label for="recipient-email">Mottagarens e-postadress <span class="text-danger">*</span></label>
+                        <small>Ange en eller flera e-postadresser. Separera med kommatecken.</small>
+                        <input type="text" name="recipient_email" id="recipient-email" placeholder="Mottagarens e-postadress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Meddelande</label>
+                        <textarea name="message" id="message" rows="4" placeholder="Meddelande"></textarea>
+                    </div>
+                                            <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6Ld8YTEUAAAAAECqGGXNZbyMIfG0xZMIOJM_D3Vw"></div>
+                        </div>
+                                    </article>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="post_id" value="1410">
+                <input type="hidden" name="share_type" value="share">
+                <input type="submit" class="btn btn-primary" value="Skicka">
+                <input type="hidden" id="_wpnonce" name="_wpnonce" value="6cb8ff91b4" /><input type="hidden" name="_wp_http_referer" value="/forskola-och-utbildning/" /><input type="hidden" id="_wpnonce" name="_wpnonce" value="6cb8ff91b4" /><input type="hidden" name="_wp_http_referer" value="/forskola-och-utbildning/" />
+            </div>
+        </form>
+    </div>
+    <a href="#close" class="backdrop"></a>
+</div>
+    </li>
+</ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid">
+        <div class="grid-xs-12">
+            <ul class="article-timestamps">
+    
+    
+                        <li>
+                <strong>Publicerad:</strong>
+                <time datetime="2015-01-04 08:58">
+                    4 januari 2015 kl. 08:58                </time>
+            </li>
+            
+                        <li>
+                <strong>Senast uppdaterad:</strong>
+                <time datetime="2020-04-15 08:33">
+                    15 april 2020 kl. 08:33                </time>
+            </li>
+            
+    </ul>
+        </div>
+    </div>
+</footer>
+            </div>
+        </div>
+
+            </div>
+
+    <div class="grid grid--columns hidden-md hidden-lg u-hidden@xl">
+        <div class="grid-md-8 offset-md-4">
+            <div id="customer-feedback" class="box box-index creamy gutter hidden-print customer-feedback-container">
+    <input type="hidden" name="customer-feedback-post-id" value="1410">
+
+    <div class="grid">
+        <div class="grid-xs-12">
+            <h4 class="box-title "><i class="pricon pricon-question-o"></i> Fick du hjälp av informationen på sidan?</h4>
+            <p class="text-sm">Här kan du lämna feedback om informationen på sidan. Du får inte svar på din feedback. Har du frågor eller vill komma i kontakt med Helsingborgs stad kan du vända dig till <a href="https://helsingborg.se/kontaktcenter">Kontaktcenter</a>. Tack för att du hjälper oss att göra webbplatsen bättre.</p>
+        </div>
+        <div class="grid-xs-12">
+            <div class="gutter gutter-top gutter-sm">
+                                    <div class="customer-feedback-answers">
+                        <button rel="nofollow" class="btn btn-success" value="yes"
+                                data-action="customer-feedback-submit-response">Ja</button>
+                        <button rel="nofollow" class="btn btn-error" value="no"
+                                data-action="customer-feedback-submit-response">Nej</button>
+                    </div>
+                    <div class="customer-feedback-comment text-left gutter gutter-top gutter-sm" style="display: none;">
+                                                    <div class="form-group customer-feedback-topics">
+                                <label for="customer-feedback-comment-topic-1">Ämne</label>
+                                <p class="text-sm block-level">Komplettera din feedback genom att välja en kategori och ange kommentar.</p>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18928"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Informationen på sidan är felaktig och behöver uppdateras                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18929"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Jag har förslag på kompletterande information till sidan                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18930"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Jag hittar inte den information jag söker på sidan                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18931"
+                                               topic-description="Till exempel länkar som inte fungerar eller som leder till fel sida, långsam laddning eller annat tekniskt problem."
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability=""> Jag upplever tekniska problem på sidan                                    </label>
+                                                                    <label class="radio">
+                                        <input type="radio" value="18932"
+                                               topic-description=""
+                                               name="customer-feedback-comment-topic"
+                                               feedback-capability="1"> Övrigt                                    </label>
+                                                            </div>
+                            <div class="form-group">
+                                <div class="topic-description notice info" style="display:none;"></div>
+                            </div>
+                                                <div class="form-group">
+                            <label for="customer-feedback-comment-text-1" class="feedback-label-yes"
+                                   style="display: none;">Kommentar</label>
+                            <label for="customer-feedback-comment-text-1" class="feedback-label-no"
+                                   style="display: none;">Hur kan vi förbättra vår information?</label>
+                            <p class="text-sm block-level">Observera att din kommentar blir en allmän handling som kan komma att läsas av andra.</p>
+                            <textarea class="form-control" style="height: 100px;"
+                                      id="customer-feedback-comment-text-1"
+                                      name="customer-feedback-comment-text"></textarea>
+
+                            <div class="grid">
+                                <div class="grid-md-12">
+                                                                            <p class="text-sm gutter gutter-sm gutter-bottom">
+                                            I det här formuläret samlar vi in personuppgifter om dig för att [det formuläret ska användas till]. Uppgifterna kommer inte att hanteras för något annat syfte, och kommer att raderas när [ärendet är avslutat]. <a href="/toppmeny/om-webbplatsen/sa-har-behandlar-vi-dina-personuppgifter/">Läs om hur Helsingborgs stad hanterar personuppgifter</a>.                                        </p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group" style="display:none;">
+                            <label for="customer-feedback-comment-email-1">E-postadress</label>
+                            <p class="text-sm block-level">Ange din e-postadress för att få återkoppling på din feedback.</p>
+                            <input type="email" id="customer-feedback-comment-email-1"
+                                   name="customer-feedback-comment-email" value="">
+                        </div>
+                                                    <div class="form-group">
+                                <div class="g-recaptcha"></div>
+                            </div>
+                                                <div class="form-group">
+                            <button rel="nofollow" style="margin-top:5px;" class="btn btn-submit"
+                                    data-action="customer-feedback-submit-comment">Skicka</button>
+                        </div>
+                    </div>
+                    <div class="customer-feedback-thanks" style="display: none;">
+                        <div class="notice success">Tack för ditt svar</div>
+                    </div>
+                    <div class="customer-feedback-error" style="display: none;">
+                        <div class="notice warning">Något gick fel, vänligen försök igen senare.</div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="page-footer u-mb-4">
+        <div class="grid grid--columns">
+        <div class="grid-xs-12">
+            <div class="box box-border gutter gutter-horizontal no-margin hidden-print">
+                <div class="gutter gutter-vertical gutter-sm">
+                <div class="grid grid-table grid-va-middle no-margin no-padding">
+                    <div class="grid-auto">
+                        <i class="pricon pricon-share pricon-lg" style="margin-right:5px;"></i> <strong>Dela sidan:</strong> <span class="u-hidden@xs">Förskola och utbildning</span>
+                    </div>
+                    <div class="grid-fit-content text-right-md text-right-lg">
+                        <!-- Social -->
+<ul class="share share-social share-social-icon-md share-horizontal share-no-labels hidden-print inline-block">
+    <li>
+        <a class="share-social-facebook" data-action="share-popup" href="https://www.facebook.com/sharer/sharer.php?u=https://helsingborg.se/?socialShareId=339305" data-tooltip="Dela på Facebook">
+            <i class="pricon pricon-facebook"></i>
+            <span>Dela på Facebook</span>
+        </a>
+    </li>
+    <li>
+        <a class="share-social-twitter" data-action="share-popup" href="http://twitter.com/share?url=https://helsingborg.se/?socialShareId=339305" data-tooltip="Dela på Twitter">
+            <i class="pricon pricon-twitter"></i>
+            <span>Dela på Twitter</span>
+        </a>
+    </li>
+    <li>
+        <a class="share-social-linkedin" data-action="share-popup" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://helsingborg.se/?socialShareId=339305&amp;title=F%C3%B6rskola+och+utbildning" data-tooltip="Dela på LinkedIn">
+            <i class="pricon pricon-linkedin"></i>
+            <span>Dela på LinkedIn</span>
+        </a>
+    </li>
+    <li>
+        <a class="share-social-email" data-action="share-email" href="#modal-target-1410" data-tooltip="Dela med e-post">
+            <i class="pricon pricon-email"></i>
+            <span>Dela med e-post</span>
+        </a>
+        <div id="modal-target-1410" class="modal modal-backdrop-2 modal-xs text-left" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content material-shadow-lg">
+        <form class="social-share-email">
+            <div class="modal-header">
+                <a class="btn btn-close" href="#close"></a>
+                <h2 class="modal-title">Dela med e-post</h2>
+            </div>
+            <div class="modal-body">
+                <article>
+                    <div class="form-group">
+                        <label>URL</label>
+                        <a href="https://helsingborg.se/forskola-och-utbildning/" target="_blank">https://helsingborg.se/forskola-och-utbildning/</a>
+                    </div>
+                                            <div class="form-group">
+                            <label for="sender-name">Ditt namn <span class="text-danger">*</span></label>
+                            <input type="text" name="sender_name" id="sender-name" placeholder="Ditt namn" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sender-email">Din e-postadress <span class="text-danger">*</span></label>
+                            <input type="email" name="sender_email" id="sender-email" placeholder="Din e-postadress" required>
+                        </div>
+                                        <div class="form-group">
+                        <label for="recipient-email">Mottagarens e-postadress <span class="text-danger">*</span></label>
+                        <small>Ange en eller flera e-postadresser. Separera med kommatecken.</small>
+                        <input type="text" name="recipient_email" id="recipient-email" placeholder="Mottagarens e-postadress" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Meddelande</label>
+                        <textarea name="message" id="message" rows="4" placeholder="Meddelande"></textarea>
+                    </div>
+                                            <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6Ld8YTEUAAAAAECqGGXNZbyMIfG0xZMIOJM_D3Vw"></div>
+                        </div>
+                                    </article>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="post_id" value="1410">
+                <input type="hidden" name="share_type" value="share">
+                <input type="submit" class="btn btn-primary" value="Skicka">
+                <input type="hidden" id="_wpnonce" name="_wpnonce" value="6cb8ff91b4" /><input type="hidden" name="_wp_http_referer" value="/forskola-och-utbildning/" /><input type="hidden" id="_wpnonce" name="_wpnonce" value="6cb8ff91b4" /><input type="hidden" name="_wp_http_referer" value="/forskola-och-utbildning/" />
+            </div>
+        </form>
+    </div>
+    <a href="#close" class="backdrop"></a>
+</div>
+    </li>
+</ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid">
+        <div class="grid-xs-12">
+            <ul class="article-timestamps">
+    
+    
+                        <li>
+                <strong>Publicerad:</strong>
+                <time datetime="2015-01-04 08:58">
+                    4 januari 2015 kl. 08:58                </time>
+            </li>
+            
+                        <li>
+                <strong>Senast uppdaterad:</strong>
+                <time datetime="2020-04-15 08:33">
+                    15 april 2020 kl. 08:33                </time>
+            </li>
+            
+    </ul>
+        </div>
+    </div>
+</footer>
+        </div>
+    </div>
+</div>
+
+
+            </main>
+
+    <div class="sidebar-bottom-fullwidth">
+    <div class="modularity-mod-contact-banner modularity-mod-contact-banner-569900 grid-md-12"><div id="contact" class="c-contact-banner">
+    <div class="container">
+        <div class="grid">
+
+            <!-- Main content -->
+            <div class="grid-md-8">
+                                    <h2 class="c-contact-banner__heading">
+                        <span class="c-contact-banner__heading-inner">Kontakta kommunen — En väg in</span>
+                    </h2>
+                
+                                    <p class="c-contact-banner__preamble">
+                        <span class="c-contact-banner__preamble-inner">När du kontaktar oss är det kommunvägledarna på Helsingborg kontaktcenter som tar hand om dina frågor.</span>
+                    </p>
+                            </div>
+
+            <!-- Business hours -->
+            <div class="grid-md-4">
+
+                <div class="c-contact-banner__hours">
+
+                                            <h3 class="c-contact-banner__hours-heading">
+                            <span class="c-contact-banner__hours-heading-inner">Öppettider</span>
+                        </h3>
+                    
+                                            <ul class="c-contact-banner__hours-list">
+                                                            <li class="c-contact-banner__hours-list-item-0">
+                                    <span class="c-contact-banner__hours-list-label">
+                                        <span class="c-contact-banner__hours-weekdays">
+                                            Måndag-torsdag
+                                        </span>
+                                        <span class="c-contact-banner__hours-time">
+                                            07:00-19:00
+                                        </span>
+                                    </span>
+                                </li>
+                                                            <li class="c-contact-banner__hours-list-item-1">
+                                    <span class="c-contact-banner__hours-list-label">
+                                        <span class="c-contact-banner__hours-weekdays">
+                                            Fredag
+                                        </span>
+                                        <span class="c-contact-banner__hours-time">
+                                            07:00-17:00
+                                        </span>
+                                    </span>
+                                </li>
+                                                            <li class="c-contact-banner__hours-list-item-2">
+                                    <span class="c-contact-banner__hours-list-label">
+                                        <span class="c-contact-banner__hours-weekdays">
+                                            Lördag
+                                        </span>
+                                        <span class="c-contact-banner__hours-time">
+                                            10:00-15:00
+                                        </span>
+                                    </span>
+                                </li>
+                                                    </ul>
+                    
+                                            <div class="c-contact-banner__hours-exceptions">
+                            <span class="small">
+                                Avvikande öppettider kan förekomma i samband med röda dagar, samt dag innan röd dag.
+                            </span>
+                        </div>
+                                    </div>
+            </div>
+
+            <!-- Icon gradient -->
+            <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+                <linearGradient id="c-contact-banner__icon-gradient" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#cb0050" />
+                    <stop offset="100%" stop-color="#fa1a74" />
+                </linearGradient>
+            </svg>
+
+            <!-- Items -->
+            <div class="grid-xs-12">
+                <div class="c-contact-banner__wrapper">
+
+                    <div class="c-contact-banner__items">
+                        
+                                                                                    <div class="c-contact-banner__item">
+
+                                    <div class="c-contact-banner__item-inner">
+
+                                        <h3 class="c-contact-banner__item-title">
+                                            <span class="c-contact-banner__item-icon">
+                                                <?xml version="1.0" encoding="iso-8859-1"?><svg viewBox="0 -26 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m256 100c-5.519531 0-10 4.480469-10 10s4.480469 10 10 10 10-4.480469 10-10-4.480469-10-10-10zm0 0"/><path d="m90 280c5.519531 0 10-4.480469 10-10s-4.480469-10-10-10-10 4.480469-10 10 4.480469 10 10 10zm0 0"/><path d="m336 0c-90.027344 0-163.917969 62.070312-169.632812 140.253906-85.738282 4.300782-166.367188 66.125-166.367188 149.746094 0 34.945312 13.828125 68.804688 39 95.632812 4.980469 20.53125-1.066406 42.292969-16.070312 57.296876-2.859376 2.859374-3.714844 7.160156-2.167969 10.898437 1.546875 3.734375 5.191406 6.171875 9.238281 6.171875 28.519531 0 56.003906-11.183594 76.425781-30.890625 19.894531 6.78125 45.851563 10.890625 69.574219 10.890625 90.015625 0 163.898438-62.054688 169.628906-140.222656 20.9375-.929688 42.714844-4.796875 59.945313-10.667969 20.421875 19.707031 47.90625 30.890625 76.425781 30.890625 4.046875 0 7.691406-2.4375 9.238281-6.171875 1.546875-3.738281.691407-8.039063-2.167969-10.898437-15.003906-15.003907-21.050781-36.765626-16.070312-57.296876 25.171875-26.828124 39-60.6875 39-95.632812 0-86.886719-86.839844-150-176-150zm-160 420c-23.601562 0-50.496094-4.632812-68.511719-11.800781-3.859375-1.539063-8.269531-.527344-11.078125 2.539062-12.074218 13.199219-27.773437 22.402344-44.878906 26.632813 9.425781-18.058594 11.832031-39.347656 6.097656-59.519532-.453125-1.589843-1.292968-3.042968-2.445312-4.226562-22.6875-23.367188-35.183594-53.066406-35.183594-83.625 0-70.46875 71.4375-130 156-130 79.851562 0 150 55.527344 150 130 0 71.683594-67.289062 130-150 130zm280.816406-186.375c-1.152344 1.1875-1.992187 2.640625-2.445312 4.226562-5.734375 20.171876-3.328125 41.460938 6.097656 59.519532-17.105469-4.226563-32.804688-13.433594-44.878906-26.632813-2.808594-3.0625-7.21875-4.078125-11.078125-2.539062-15.613281 6.210937-37.886719 10.511719-58.914063 11.550781-2.921875-37.816406-21.785156-73.359375-54.035156-99.75h130.4375c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10h-161.160156c-22.699219-11.554688-48.1875-18.292969-74.421875-19.707031 5.746093-67.164063 70.640625-120.292969 149.582031-120.292969 84.5625 0 156 59.53125 156 130 0 30.558594-12.496094 60.257812-35.183594 83.625zm0 0"/><path d="m256 260h-126c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h126c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/><path d="m256 320h-166c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h166c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/><path d="m422 100h-126c-5.523438 0-10 4.476562-10 10s4.476562 10 10 10h126c5.523438 0 10-4.476562 10-10s-4.476562-10-10-10zm0 0"/></svg>
+
+                                            </span>
+                                            <span class="c-contact-banner__item-title-inner">
+                                                Chatta
+                                            </span>
+                                        </h3>
+                                        <p class="c-contact-banner__item-content">
+                                            <span class="c-contact-banner__item-content-inner">
+                                                Få svar direkt – chatta med en kommunvägledare
+                                            </span>
+                                        </p>
+                                        <a
+                                                                                            href="#"
+                                            
+                                                                                            onclick="expandVngageBanner(); return false; "
+                                                                                        class="c-contact-banner__item-cta"
+                                        >
+                                        Starta chatt <i class="pricon pricon-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="c-contact-banner__item">
+
+                                    <div class="c-contact-banner__item-inner">
+
+                                        <h3 class="c-contact-banner__item-title">
+                                            <span class="c-contact-banner__item-icon">
+                                                <?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><g><path d="M499.76,192.94,408,144V64a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v80L12.24,192.94A8.005,8.005,0,0,0,8,200V456a8,8,0,0,0,8,8H496a8,8,0,0,0,8-8V200A8.005,8.005,0,0,0,499.76,192.94ZM408,162.13,479,200l-71,37.87ZM120,72H392V246.4L256,318.93,120,246.4Zm-16,90.13v75.74L33,200Zm-80,51.2,155.7,83.04L24,437.92ZM36.69,448l158-143.63,57.55,30.69a7.99,7.99,0,0,0,7.52,0l57.55-30.69L475.31,448ZM488,437.92,332.3,296.37,488,213.33Z"/><path d="M176,424H80a8,8,0,0,0,0,16h96a8,8,0,0,0,0-16Z"/><path d="M208,424h-8a8,8,0,0,0,0,16h8a8,8,0,0,0,0-16Z"/><path d="M144,176H264a8,8,0,0,0,0-16H144a8,8,0,0,0,0,16Z"/><path d="M144,200h48a8,8,0,0,0,0-16H144a8,8,0,0,0,0,16Z"/><path d="M224,184h-8a8,8,0,0,0,0,16h8a8,8,0,0,0,0-16Z"/><path d="M144,144H368a8,8,0,0,0,8-8V104a8,8,0,0,0-8-8H144a8,8,0,0,0-8,8v32A8,8,0,0,0,144,144Zm8-32H360v16H152Z"/></g></svg>
+
+                                            </span>
+                                            <span class="c-contact-banner__item-title-inner">
+                                                Mejla
+                                            </span>
+                                        </h3>
+                                        <p class="c-contact-banner__item-content">
+                                            <span class="c-contact-banner__item-content-inner">
+                                                Få svar inom 24 timmar kontaktcenter@helsingborg.se
+                                            </span>
+                                        </p>
+                                        <a
+                                                                                            href="mailto:kontaktcenter@helsingborg.se"
+                                            
+                                                                                            onclick=""
+                                                                                        class="c-contact-banner__item-cta"
+                                        >
+                                        Skicka mejl <i class="pricon pricon-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="c-contact-banner__item">
+
+                                    <div class="c-contact-banner__item-inner">
+
+                                        <h3 class="c-contact-banner__item-title">
+                                            <span class="c-contact-banner__item-icon">
+                                                <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+<g>
+	<g>
+		<path d="M160,0C93.726,0,40,53.726,40,120v88c0.035,30.913,25.087,55.965,56,56h8v-16h-8c-22.08-0.026-39.974-17.92-40-40v-88
+			c0-57.438,46.562-104,104-104s104,46.562,104,104v88c-0.026,22.08-17.92,39.974-40,40h-8v16h8c30.913-0.035,55.965-25.087,56-56
+			v-88C280,53.726,226.274,0,160,0z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M65.928,377.032l5.848-9.208l-13.512-8.576l-5.848,9.216c-17.687,27.872-16.374,63.76,3.304,90.264V480h16v-24
+			c0.001-1.817-0.617-3.581-1.752-5C52.96,429.738,51.337,400.02,65.928,377.032z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M440,0H336c-22.08,0.026-39.974,17.92-40,40v80c0.026,22.08,17.92,39.974,40,40h16v32
+			c-0.001,3.235,1.947,6.153,4.936,7.392c0.971,0.405,2.012,0.611,3.064,0.608c2.122,0,4.156-0.844,5.656-2.344L403.312,160H440
+			c22.08-0.026,39.974-17.92,40-40V40C479.974,17.92,462.08,0.026,440,0z M464,120c0,13.255-10.745,24-24,24h-40
+			c-2.122,0-4.156,0.844-5.656,2.344L368,172.688V152c0-4.418-3.582-8-8-8h-24c-13.255,0-24-10.745-24-24V40
+			c0-13.255,10.745-24,24-24h104c13.255,0,24,10.745,24,24V120z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="336" y="40" width="56" height="16"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="408" y="40" width="32" height="16"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="336" y="72" width="104" height="16"/>
+	</g>
+</g>
+<g>
+	<g>
+		<rect x="336" y="104" width="56" height="16"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M267.584,368.464l-5.848-9.216l-13.512,8.576l5.848,9.216c14.592,22.985,12.969,52.701-4.04,73.96
+			c-1.135,1.419-1.753,3.183-1.752,5v24h16v-21.272C283.958,432.224,285.271,396.336,267.584,368.464z"/>
+	</g>
+</g>
+<g>
+	<g>
+		<path d="M472,272h-72c-30.016,0.035-54.666,23.729-55.888,53.72L320,369.128V336c-0.035-30.913-25.087-55.965-56-56h-29.24
+			l-0.216-0.168L234.4,280H216c-8.837,0-16-7.163-16-16v-18.824c24.719-14.272,39.962-40.633,40-69.176v-64
+			c-0.012-13.255-3.31-26.3-9.6-37.968c-2.015-3.712-6.569-5.219-10.4-3.44L84.592,134.304c-2.804,1.32-4.593,4.141-4.592,7.24V176
+			c0.038,28.543,15.281,54.904,40,69.176V264c0,8.837-7.163,16-16,16H56c-30.913,0.035-55.965,25.087-56,56v144h16V336
+			c0.026-22.08,17.92-39.974,40-40h25.456l72.04,100.656c1.48,2.069,3.856,3.31,6.4,3.344H160c2.518,0,4.889-1.186,6.4-3.2l76-100.8
+			H264c22.08,0.026,39.974,17.92,40,40v64c0.004,4.418,3.589,7.997,8.007,7.993c2.902-0.003,5.575-1.576,6.985-4.113L356.704,336
+			h45.864l-78,144h18.2L420.8,336h3.2c30.913-0.035,55.965-25.087,56-56C480,275.582,476.418,272,472,272z M96,176v-29.376
+			l123.528-58.128C222.483,95.98,224,103.954,224,112v64c0,35.346-28.654,64-64,64C124.654,240,96,211.346,96,176z M160.168,378.496
+			L135.48,344h50.688L160.168,378.496z M198.272,328H124l-22.904-32H104c17.673,0,32-14.327,32-32v-11.688
+			c15.622,4.917,32.378,4.917,48,0V264c0,17.673,14.327,32,32,32h6.4L198.272,328z M424,320h-63.2
+			c3.825-18.613,20.198-31.979,39.2-32h63.2C459.375,306.613,443.002,319.979,424,320z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+                                            </span>
+                                            <span class="c-contact-banner__item-title-inner">
+                                                Besök
+                                            </span>
+                                        </h3>
+                                        <p class="c-contact-banner__item-content">
+                                            <span class="c-contact-banner__item-content-inner">
+                                                Besök oss på Helsingborg Kontaktcenter på Stortorget 17
+                                            </span>
+                                        </p>
+                                        <a
+                                                                                            href="https://www.google.com/maps/place/Helsingborg+kontaktcenter/@56.0477948,12.6951561,17.5z/data=!4m5!3m4!1s0x0:0x5d6403b214925c57!8m2!3d56.0474119!4d12.6959601"
+                                            
+                                                                                            onclick=""
+                                                                                        class="c-contact-banner__item-cta"
+                                        >
+                                        Visa karta <i class="pricon pricon-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                                            <div class="c-contact-banner__item">
+
+                                    <div class="c-contact-banner__item-inner">
+
+                                        <h3 class="c-contact-banner__item-title">
+                                            <span class="c-contact-banner__item-icon">
+                                                <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512.076 512.076" style="enable-background:new 0 0 512.076 512.076;" xml:space="preserve">
+<g transform="translate(-1 -1)">
+	<g>
+		<g>
+			<path d="M499.639,396.039l-103.646-69.12c-13.153-8.701-30.784-5.838-40.508,6.579l-30.191,38.818
+				c-3.88,5.116-10.933,6.6-16.546,3.482l-5.743-3.166c-19.038-10.377-42.726-23.296-90.453-71.04s-60.672-71.45-71.049-90.453
+				l-3.149-5.743c-3.161-5.612-1.705-12.695,3.413-16.606l38.792-30.182c12.412-9.725,15.279-27.351,6.588-40.508l-69.12-103.646
+				C109.12,1.056,91.25-2.966,77.461,5.323L34.12,31.358C20.502,39.364,10.511,52.33,6.242,67.539
+				c-15.607,56.866-3.866,155.008,140.706,299.597c115.004,114.995,200.619,145.92,259.465,145.92
+				c13.543,0.058,27.033-1.704,40.107-5.239c15.212-4.264,28.18-14.256,36.181-27.878l26.061-43.315
+				C517.063,422.832,513.043,404.951,499.639,396.039z M494.058,427.868l-26.001,43.341c-5.745,9.832-15.072,17.061-26.027,20.173
+				c-52.497,14.413-144.213,2.475-283.008-136.32S8.29,124.559,22.703,72.054c3.116-10.968,10.354-20.307,20.198-26.061
+				l43.341-26.001c5.983-3.6,13.739-1.855,17.604,3.959l37.547,56.371l31.514,47.266c3.774,5.707,2.534,13.356-2.85,17.579
+				l-38.801,30.182c-11.808,9.029-15.18,25.366-7.91,38.332l3.081,5.598c10.906,20.002,24.465,44.885,73.967,94.379
+				c49.502,49.493,74.377,63.053,94.37,73.958l5.606,3.089c12.965,7.269,29.303,3.898,38.332-7.91l30.182-38.801
+				c4.224-5.381,11.87-6.62,17.579-2.85l103.637,69.12C495.918,414.126,497.663,421.886,494.058,427.868z"/>
+			<path d="M291.161,86.39c80.081,0.089,144.977,64.986,145.067,145.067c0,4.713,3.82,8.533,8.533,8.533s8.533-3.82,8.533-8.533
+				c-0.099-89.503-72.63-162.035-162.133-162.133c-4.713,0-8.533,3.82-8.533,8.533S286.448,86.39,291.161,86.39z"/>
+			<path d="M291.161,137.59c51.816,0.061,93.806,42.051,93.867,93.867c0,4.713,3.821,8.533,8.533,8.533
+				c4.713,0,8.533-3.82,8.533-8.533c-0.071-61.238-49.696-110.863-110.933-110.933c-4.713,0-8.533,3.82-8.533,8.533
+				S286.448,137.59,291.161,137.59z"/>
+			<path d="M291.161,188.79c23.552,0.028,42.638,19.114,42.667,42.667c0,4.713,3.821,8.533,8.533,8.533s8.533-3.82,8.533-8.533
+				c-0.038-32.974-26.759-59.696-59.733-59.733c-4.713,0-8.533,3.82-8.533,8.533S286.448,188.79,291.161,188.79z"/>
+		</g>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+
+                                            </span>
+                                            <span class="c-contact-banner__item-title-inner">
+                                                Ring
+                                            </span>
+                                        </h3>
+                                        <p class="c-contact-banner__item-content">
+                                            <span class="c-contact-banner__item-content-inner">
+                                                Prata med en kommunvägledare på telefon 042-10 50 00
+                                            </span>
+                                        </p>
+                                        <a
+                                                                                            href="tel:+4642105000"
+                                            
+                                                                                            onclick=""
+                                                                                        class="c-contact-banner__item-cta"
+                                        >
+                                        Ring <i class="pricon pricon-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                                                        </div>
+                </div>
+            </div>
+
+            <!-- More info -->
+                            <div class="grid-xs-12">
+                    <a href="https://helsingborg.se/kommun-och-politik/kontakt-och-paverkan/kontakta-kommunen/" class="c-contact-banner__info">Läs mer om Helsingborg kontaktcenter <i class="pricon pricon-chevron-right"></i></a>
+                </div>
+            
+        </div>
+    </div>
+</div></div>  </div>
+
+<footer class="main-footer hidden-print scroll-elevator-toggle">
+    <div class="container">
+
+        
+        <div class="grid">
+            <div class="grid-md-12">
+
+                
+                                <div class="grid grid--columns">
+                    <div class="grid-md-12">
+                                                <a href="https://helsingborg.se" class="logotype" ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 239.4 66.9" id="Layer_1" version="1.1" viewBox="0 0 239.4 66.9" x="0px" y="0px" xml:space="preserve">
+<g id="XMLID_2_">
+	<g id="XMLID_54_">
+		<polygon fill="#1D1D1B" id="XMLID_72_" points="74.5,41.6 74.5,34.4 66.2,34.4 66.2,41.6 63.6,41.6 63.6,25.1 66.2,25.1     66.2,32.1 74.5,32.1 74.5,25.1 77.2,25.1 77.2,41.6 74.5,41.6   "></polygon>
+		<polygon fill="#1D1D1B" id="XMLID_71_" points="83.3,41.6 83.3,25.1 92.1,25.1 91.3,27.4 85.9,27.4 85.9,32.1 91.3,32.1     91.3,34.3 85.9,34.3 85.9,39.4 92.2,39.4 92.2,41.6 83.3,41.6   "></polygon>
+		<polygon fill="#1D1D1B" id="XMLID_70_" points="97.6,41.6 97.6,25.1 100.2,25.1 100.2,39.4 106.3,39.4 106.3,41.6 97.6,41.6   "></polygon>
+		<path d="M114.9,41.9c-2.3,0-3.8-0.8-4.9-1.4l1.1-2c0.8,0.6,2.1,1.2,3.7,1.2c1.3,0,2.9-0.6,2.9-2.1    c0-2.5-4-3-6-5.3c-0.7-0.8-1.1-1.7-1.1-2.9c0-2.4,1.9-4.4,5.2-4.4c1.8,0,3.1,0.5,3.9,0.9l0,2.5c-1.1-0.7-2.4-1.1-3.8-1.1    c-1.4,0-2.6,0.6-2.6,1.9c0,3.3,7.2,3.2,7.2,8.2C120.5,40.1,118,41.9,114.9,41.9L114.9,41.9z" fill="#1D1D1B" id="XMLID_69_"></path>
+		<polygon fill="#1D1D1B" id="XMLID_68_" points="125.7,41.6 125.7,25.1 128.4,25.1 128.4,41.6 125.7,41.6   "></polygon>
+		<path d="M146.5,41.6l-7.8-10.1c-0.8-1-1.2-1.7-1.6-2.4h0c0,0.6,0,1.4,0,2.2v10.4h-2.6V25.1h2.7    l7.5,9.8c0.9,1.2,1.4,1.8,1.7,2.5h0c0-0.7,0-1.5,0-2.3v-9.9h2.6v16.5H146.5L146.5,41.6z" fill="#1D1D1B" id="XMLID_67_"></path>
+		<path d="M162.1,41.9c-5,0-8.3-3.5-8.3-8.3c0-5,3.6-8.6,9-8.6c2.1,0,3.7,0.5,4.8,0.9l0,2.5    c-1.2-0.6-2.8-1.2-4.6-1.2c-4.3,0-6.3,2.7-6.3,6.1c0,3.7,2.3,6.3,6.1,6.3c1.2,0,2.2-0.2,2.8-0.6v-5.7h2.6v7    C166.8,41.1,164.6,41.9,162.1,41.9L162.1,41.9z" fill="#1D1D1B" id="XMLID_66_"></path>
+		<path d="M178.9,34.4h-2.2v5h2.1c2.1,0,3.2-1,3.2-2.6C182,35.4,180.8,34.4,178.9,34.4L178.9,34.4z     M176.7,27.4v4.7h1.9c1.2,0,2.4-0.9,2.4-2.4c0-1.4-0.8-2.3-2.6-2.3H176.7L176.7,27.4z M178.9,41.6h-4.9V25.1h5    c3.2,0,4.6,2.1,4.6,4.1c0,1.5-0.7,2.9-2.1,3.5v0c1.7,0.4,3.2,2,3.2,4C184.7,39,183.2,41.6,178.9,41.6L178.9,41.6z" fill="#1D1D1B" id="XMLID_62_"></path>
+		<path d="M196.9,27.3c-3.3,0-5.6,2.4-5.6,6.2c0,3.8,2.2,6.2,5.6,6.2c3.3,0,5.5-2.4,5.5-6.2    C202.5,29.8,200.4,27.3,196.9,27.3L196.9,27.3z M191,27.4c1.5-1.5,3.6-2.4,6-2.4c2.6,0,4.8,1,6.3,2.6c1.4,1.5,2.1,3.5,2.1,5.9    c0,2.5-0.8,4.7-2.4,6.2c-1.5,1.5-3.5,2.3-6,2.3c-2.3,0-4.3-0.7-5.7-2c-1.7-1.5-2.6-3.8-2.6-6.3C188.6,31.1,189.5,28.9,191,27.4    L191,27.4z" fill="#1D1D1B" id="XMLID_59_"></path>
+		<path d="M214.2,27.4h-1.5v5.5h1.6c1.7,0,3-1.3,3-2.9C217.2,28.6,216.4,27.4,214.2,27.4L214.2,27.4z     M218.8,41.6c-2.6-4.3-3.9-6.5-4.5-6.7h-1.5v6.7h-2.6V25.1h4.1c4.1,0,5.7,2.1,5.7,4.6c0,2.3-1.5,3.7-3.1,4.4v0    c0.7,0.3,2.4,3.3,5,7.5H218.8L218.8,41.6z" fill="#1D1D1B" id="XMLID_56_"></path>
+		<path d="M233.3,41.9c-5,0-8.3-3.5-8.3-8.3c0-5,3.6-8.6,9-8.6c2.1,0,3.7,0.5,4.8,0.9l0,2.5    c-1.2-0.6-2.8-1.2-4.6-1.2c-4.3,0-6.3,2.7-6.3,6.1c0,3.7,2.3,6.3,6.1,6.3c1.2,0,2.2-0.2,2.8-0.6v-5.7h2.6v7    C238.1,41.1,235.9,41.9,233.3,41.9L233.3,41.9z" fill="#1D1D1B" id="XMLID_55_"></path>
+	</g>
+	<g id="XMLID_3_">
+		<path d="M42.5,17.5H21.9l0,0h0l0,0H1.2c0,37.5,0,37.5,0,39.3c0,1.7,0.7,3.5,3.4,4.2    c2.7,0.7,12.6,3,14.4,3.5c2.4,0.6,2.8,2.3,2.9,2.5v0l0,0l0,0v0c0-0.1,0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5    c2.7-0.7,3.4-2.5,3.4-4.2C42.5,55,42.5,55,42.5,17.5L42.5,17.5z" fill="#FFFFFF" id="XMLID_53_"></path>
+		<path d="M16.3,38.9h-9c-0.9,0.3-3,1.4-3,3.4    c0,0.7,0.3,1.2,0.6,1.5h6.5L16.3,38.9z" fill="#E20613" id="XMLID_52_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#E20613" id="XMLID_51_" points="21.7,33.7 21.8,33.8 21.9,33.8     22,33.7 26.7,38.2 26.7,29 17,29 17,38.2   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<path d="M11.9,44.2H5.3v6h0.8v2.4h3.7v-2.5h2.9v-5.7    C12.3,44.4,12.1,44.3,11.9,44.2z" fill="#E20613" id="XMLID_50_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M29.3,44.1c-0.2,0.1-0.7,0.4-1.4,0.4    c0,0,0,0,0,0c-0.7,0-1.1-0.2-1.4-0.3c-0.2,0.1-0.7,0.3-1.4,0.3c-0.7,0-1.2-0.2-1.5-0.4c-0.2,0.2-0.8,0.4-1.8,0.4    c-1,0-1.5-0.2-1.8-0.4c-0.3,0.1-0.8,0.4-1.5,0.4c-0.7,0-1.2-0.2-1.4-0.3c-0.2,0.1-0.7,0.3-1.4,0.3c-0.7,0-1.2-0.3-1.4-0.4    c-0.2,0.1-0.7,0.2-1.2,0.3v5.7h2.1v2.4H19v-2.3h5.6v2.3h3.7v-2.4h2.1v-5.7C30,44.4,29.5,44.2,29.3,44.1z" fill="#E20613" id="XMLID_49_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M36.3,38.9h-9l4.9,4.8h6.5    c0.3-0.3,0.6-0.8,0.6-1.5C39.4,40.2,37.2,39.2,36.3,38.9z" fill="#E20613" id="XMLID_48_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M31,44.4v5.7h2.9v2.5h3.7v-2.3v-0.1h0.9v-6    h-6.6C31.6,44.3,31.4,44.4,31,44.4z" fill="#E20613" id="XMLID_47_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M38.3,50.9v2.4h-5.1v-2.5h-4.1v2.4h-5.2V51    h-4.2v2.3h-5.2v-2.4h-4.1v2.5H5.4v-2.4H1.2c0,4.5,0,5,0,5.9c0,1.7,0.7,3.5,3.4,4.2c2.7,0.7,12.6,3,14.4,3.5    c2.4,0.6,2.9,2.5,2.9,2.5s0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5c2.7-0.7,3.4-2.5,3.4-4.2c0-0.9,0-1.3,0-5.9H38.3z" fill="#E20613" id="XMLID_46_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#E20613" id="XMLID_45_" points="18,25.6 18,26.9 18.9,26.9     18.9,25.5 21.3,25.5 21.3,26.9 22.4,26.9 22.4,25.5 24.8,25.5 24.8,26.9 25.7,26.9 25.7,25.6 26.1,25.6 21.9,22.3 21.9,22.3     21.9,22.3 17.6,25.6   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<path d="M21.9,22.1c0.2,0,0.4-0.2,0.4-0.4c0-0.2-0.2-0.4-0.4-0.4c-0.2,0-0.4,0.2-0.4,0.4    C21.5,21.9,21.6,22.1,21.9,22.1" fill="#E20613" id="XMLID_44_"></path>
+		<path d="M22.6,19.9c0,0-0.2,0.1-0.3,0.1l0,0c0,0-0.1,0-0.1,0c0,0,0,0,0,0c0-0.1,0-0.2,0-0.2    c0-0.1,0.1-0.3,0.1-0.3l0.1-0.2l-0.2,0.1c0,0-0.2,0.1-0.3,0.1c-0.1,0-0.3-0.1-0.3-0.1l-0.2-0.1l0.1,0.2c0,0,0.1,0.2,0.1,0.3    c0,0.1,0,0.2,0,0.2c0,0,0,0,0,0c0,0-0.1,0-0.1,0c-0.1,0-0.3-0.1-0.3-0.1l-0.1,0v0.5c0,0.1,0,0.4,0,0.4l0,0.1l0.1-0.1    c0,0,0.1-0.1,0.2-0.1c0,0,0.1,0,0.1,0c0,0,0,0,0,0c0,0,0,0.1,0,0.1c0,0.1-0.1,0.4-0.1,0.4l0,0.1l0,0c0.1-0.1,0.3-0.2,0.5-0.2    c0.2,0,0.4,0.1,0.5,0.2l0,0l0-0.1c0,0-0.1-0.3-0.1-0.4c0,0,0-0.1,0-0.1c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0.1,0,0.2,0.1,0.2,0.1    l0.1,0.1l0-0.1c0,0,0-0.2,0-0.4v-0.5L22.6,19.9L22.6,19.9z" fill="#E20613" id="XMLID_43_"></path>
+		<path d="M9.3,27c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5    C8.8,27.2,9,27,9.3,27" fill="#E20613" id="XMLID_42_"></path>
+		<polygon fill="#E20613" id="XMLID_41_" points="9.6,28.3 9.1,28.3 9.1,29.9 9.6,29.9 9.6,28.3   "></polygon>
+		<path d="M34.4,27c0.3,0,0.5,0.2,0.5,0.5c0,0.3-0.2,0.5-0.5,0.5c-0.3,0-0.5-0.2-0.5-0.5    C33.9,27.2,34.1,27,34.4,27" fill="#E20613" id="XMLID_40_"></path>
+		<polygon fill="#E20613" id="XMLID_39_" points="34.6,28.3 34.2,28.3 34.2,29.9 34.6,29.9 34.6,28.3   "></polygon>
+		<polygon fill="#E20613" id="XMLID_38_" points="42.2,0 42.2,0.6 41.2,0.6 41.2,0 39.8,0 39.8,0.6 38.8,0.6 38.8,0 37.3,0     37.3,1.7 38,1.7 38,4.4 36.9,4.4 36.9,6 34.8,6 34.8,4.4 33.7,4.4 33.7,1.7 34.4,1.7 34.4,0 32.9,0 32.9,0.6 31.9,0.6 31.9,0     30.5,0 30.5,0.6 29.4,0.6 29.4,0 28,0 28,1.7 28.7,1.7 28.7,4.4 27.6,4.4 27.6,6 25.5,6 25.5,4.4 24.4,4.4 24.4,1.7 25,1.7 25,0     23.6,0 23.6,0.6 22.6,0.6 22.6,0 21.1,0 21.1,0.6 20.1,0.6 20.1,0 18.7,0 18.7,1.7 19.3,1.7 19.3,4.4 18.2,4.4 18.2,6 16.1,6     16.1,4.4 15.1,4.4 15.1,1.7 15.7,1.7 15.7,0 14.3,0 14.3,0.6 13.3,0.6 13.3,0 11.8,0 11.8,0.6 10.8,0.6 10.8,0 9.3,0 9.3,1.7     10,1.7 10,4.4 8.9,4.4 8.9,6 6.8,6 6.8,4.4 5.7,4.4 5.7,1.7 6.4,1.7 6.4,0 4.9,0 4.9,0.6 3.9,0.6 3.9,0 2.5,0 2.5,0.6 1.5,0.6     1.5,0 0,0 0,1.7 0.7,1.7 0.7,6.1 3.2,8.8 3.2,13.1 2,13.1 2,17.5 41.8,17.5 41.8,13.1 40.5,13.1 40.5,8.8 43,6.1 43,1.7 43.7,1.7     43.7,0 42.2,0   "></polygon>
+		<rect fill="#E20613" height="3.5" id="XMLID_37_" stroke="#FFFFFF" stroke-width="5.756000e-02" width="8.7" x="27.2" y="34.8"></rect>
+		<polygon fill="#E20613" id="XMLID_36_" points="27.2,30.2 27.2,34.3 37.8,34.3     34.8,30.2   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<polygon fill="#E20613" id="XMLID_35_" points="16.5,30.2 8.9,30.2 5.9,34.3     16.5,34.3   " stroke="#FFFFFF" stroke-width="5.756000e-02"></polygon>
+		<rect fill="#E20613" height="3.5" id="XMLID_34_" stroke="#FFFFFF" stroke-width="5.756000e-02" width="8.7" x="7.8" y="34.8"></rect>
+		<path d="M16.4,48.8h-1.6v-2.3c0.2-0.8,1.3-0.8,1.6,0V48.8L16.4,48.8z" fill="#FFFFFF" id="XMLID_33_"></path>
+		<path d="M22.8,48.8h-2v-2.5c0.3-1,1.7-1,2,0V48.8L22.8,48.8z" fill="#FFFFFF" id="XMLID_32_"></path>
+		<path d="M19.6,48.8h-2v-2.5c0.3-1,1.7-1,2,0V48.8L19.6,48.8z" fill="#FFFFFF" id="XMLID_31_"></path>
+		<path d="M27.3,48.8h1.6v-2.3c-0.2-0.8-1.3-0.8-1.6,0V48.8L27.3,48.8z" fill="#FFFFFF" id="XMLID_30_"></path>
+		<path d="M24.1,48.8h2v-2.5c-0.3-1-1.7-1-2,0V48.8L24.1,48.8z" fill="#FFFFFF" id="XMLID_29_"></path>
+		<path d="M7.4,47.4H6.3v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L7.4,47.4z" fill="#FFFFFF" id="XMLID_28_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M9.6,47.4H8.5v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L9.6,47.4z" fill="#FFFFFF" id="XMLID_27_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M11.8,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L11.8,47.4z" fill="#FFFFFF" id="XMLID_26_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M33,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L33,47.4z" fill="#FFFFFF" id="XMLID_25_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M35.2,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L35.2,47.4z" fill="#FFFFFF" id="XMLID_24_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M37.4,47.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V47.4L37.4,47.4z" fill="#FFFFFF" id="XMLID_23_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M10.5,37.3H9.4V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L10.5,37.3z" fill="#FFFFFF" id="XMLID_22_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M12.7,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L12.7,37.3z" fill="#FFFFFF" id="XMLID_21_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M14.9,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L14.9,37.3z" fill="#FFFFFF" id="XMLID_20_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M29.9,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L29.9,37.3z" fill="#FFFFFF" id="XMLID_19_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M32.1,37.3H31V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L32.1,37.3z" fill="#FFFFFF" id="XMLID_18_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M34.3,37.3h-1.1V36c0.2-0.5,0.9-0.5,1.1,0    V37.3L34.3,37.3z" fill="#FFFFFF" id="XMLID_17_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M20.2,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L20.2,31.4z" fill="#FFFFFF" id="XMLID_16_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M22.4,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L22.4,31.4z" fill="#FFFFFF" id="XMLID_15_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M24.6,31.4h-1.1v-1.3c0.2-0.5,0.9-0.5,1.1,0    V31.4L24.6,31.4z" fill="#FFFFFF" id="XMLID_14_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M14.9,43.8c0.2,0.1,0.5,0.2,0.9,0.2l0,0    c0.8,0,1.2-0.3,1.2-0.3l0,0l0,0l0.1,0l3.9-8.4L14.9,43.8C14.9,43.8,14.9,43.8,14.9,43.8L14.9,43.8z" fill="#E20613" id="XMLID_13_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M17.7,43.8c0.2,0.1,0.5,0.1,1,0.1l0,0    c0.7,0,1.2-0.3,1.3-0.4l0,0c0,0,0,0,0,0l0,0l0,0l1.5-8.6L17.7,43.8C17.6,43.8,17.6,43.8,17.7,43.8L17.7,43.8z" fill="#E20613" id="XMLID_12_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M20.6,43.8c0.2,0.1,0.6,0.2,1.3,0.2l0,0    c0.8,0,1.2-0.1,1.4-0.2l0,0l-1.4-8.9L20.6,43.8C20.5,43.8,20.5,43.8,20.6,43.8L20.6,43.8z" fill="#E20613" id="XMLID_11_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M12.1,43.7c0.2,0.1,0.4,0.2,0.7,0.2l0,0    c0.5,0,1.1-0.2,1.4-0.3l0,0c0.1,0,0.1,0,0.1,0l0,0l0,0l5.9-8L12.1,43.7C12.1,43.7,12.1,43.7,12.1,43.7L12.1,43.7z" fill="#E20613" id="XMLID_10_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M28.8,43.8C28.8,43.8,28.8,43.8,28.8,43.8    l-6.1-8.6l3.9,8.4l0.1,0l0,0l0,0c0,0,0.4,0.3,1.2,0.3l0,0C28.2,44,28.5,43.9,28.8,43.8L28.8,43.8z" fill="#E20613" id="XMLID_9_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M26,43.8C26.1,43.8,26.1,43.8,26,43.8    L22.2,35l1.5,8.6l0,0l0,0c0,0,0,0,0,0l0,0c0.1,0.1,0.6,0.4,1.3,0.4l0,0C25.5,44,25.8,43.9,26,43.8L26,43.8z" fill="#E20613" id="XMLID_8_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<path d="M31.6,43.7C31.6,43.7,31.6,43.7,31.6,43.7    l-8.2-8.2l5.9,8l0,0l0,0c0,0,0,0,0.1,0l0,0c0.3,0.1,0.9,0.3,1.4,0.3l0,0C31.2,43.9,31.4,43.8,31.6,43.7L31.6,43.7z" fill="#E20613" id="XMLID_7_" stroke="#FFFFFF" stroke-width="5.756000e-02"></path>
+		<polygon fill="#FFFFFF" id="XMLID_6_" points="22.8,33 21.9,34 20.9,33 21.9,32 22.8,33   "></polygon>
+		<polygon fill="#E20613" id="XMLID_5_" points="16.1,28.5 27.6,28.5 27.6,26.1 26.2,26.1 26.2,27.4 24.2,27.4 24.2,26 23,26     23,27.4 20.7,27.4 20.7,26 19.5,26 19.5,27.4 17.5,27.4 17.5,26.1 16.1,26.1 16.1,28.5   "></polygon>
+		<path d="M42.5,17.5H21.9l0,0h0l0,0H1.2c0,37.5,0,37.5,0,39.3    c0,1.7,0.7,3.5,3.4,4.2c2.7,0.7,12.6,3,14.4,3.5c2.4,0.6,2.9,2.5,2.9,2.5s0.5-1.9,2.9-2.5c1.8-0.4,11.8-2.8,14.4-3.5    c2.7-0.7,3.4-2.5,3.4-4.2C42.5,55,42.5,55,42.5,17.5L42.5,17.5z" fill="none" id="XMLID_4_" stroke="#1D1D1B" stroke-width="0.1317"></path>
+	</g>
+</g>
+</svg></a>
+                        
+                        <nav class="pull-right">
+                            <ul class="nav nav-help nav-horizontal">
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                                
+
+                
+                <div class="grid grid--columns sidebar-footer-area">
+                                            <div class="grid-lg-4"><div class="widget_text">			<div class="textwidget"><p><strong>Postadress</strong><br />
+Namn på verksamheten<br />
+251 89 Helsingborg</p>
+<p>Organisationsnummer: 212000-1157</p>
+</div>
+		</div></div><div class="grid-lg-4"><div class="widget_text">			<div class="textwidget"><p><a href="https://helsingborg.se/toppmeny/om-webbplatsen/">Om webbplatsen</a>.</p>
+<p><a href="https://helsingborg.se/toppmeny/om-webbplatsen/sa-har-behandlar-vi-dina-personuppgifter/">Så behandlar Helsingborgs stad dina personuppgifter</a>.</p>
+</div>
+		</div></div><div class="grid-lg-4"><div class="widget_nav_menu"><div class="menu-sidfotsmeny-container"><ul id="menu-sidfotsmeny" class="menu"><li id="menu-item-752517" class="menu-item menu-item-type-post_type menu-item-object-kommun-och-politik menu-item-752517"><a href="https://helsingborg.se/kommun-och-politik/larm-till-raddningstjansten-skane-nordvast/">Larm</a></li>
+<li id="menu-item-54266" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54266"><a href="?translate=true#translate">Translate</a></li>
+<li id="menu-item-180184" class="menu-item menu-item-type-post_type menu-item-object-kommun-och-politik menu-item-180184"><a href="https://helsingborg.se/kommun-och-politik/press/">Press</a></li>
+</ul></div></div></div>                                    </div>
+                
+
+                
+                                
+            </div>
+
+            
+                    </div>
+    </div>
+
+    
+        <div class="container">
+        <div class="grid">
+            <div class="grid-xs-12">
+                <ul class="icons-list">
+                                            <li>
+                            <a href="https://www.facebook.com/Helsingborgsstad" target="_blank" class="link-item-light">
+                                <i class="fa fa-facebook-square"></i>
+
+                                                                <span class="sr-only">Facebook</span>
+                                                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://twitter.com/hbgstad" target="_blank" class="link-item-light">
+                                <i class="fa fa-twitter-square"></i>
+
+                                                                <span class="sr-only">Twitter</span>
+                                                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.linkedin.com/company/helsingborg/" target="_blank" class="link-item-light">
+                                <i class="fa fa-linkedin-square"></i>
+
+                                                                <span class="sr-only">LinkedIn</span>
+                                                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://www.instagram.com/helsingborgsstad/" target="_blank" class="link-item-light">
+                                <i class="fa fa-instagram"></i>
+
+                                                                <span class="sr-only">Instagram</span>
+                                                            </a>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+
+    
+    
+            <div id="translate" class="google-translate google-translate-fold target-toggle">
+    <div class="container">
+        <div class="grid">
+            <div class="grid-sm-12">
+                <h3>Translate</h3>
+                <p>
+                    You can use Google Translate to translate the contents of helsingborg.se. To do that, select the language you would like to translate into in the list below.
+                    <br><small>Please bear in mind, since the Google Translate is an automatically generated translation, we do not take any responsibility for errors in the text.</small>
+                </p>
+                <style>iframe.skiptranslate {
+                        display: none;
+                    }
+
+                    body {
+                        top: 0px !important;
+                        position: initial !important;
+                    }</style>
+
+                <div id="google-translate-element" class="gutter gutter-vertical"></div>
+
+                <a href="#" class="btn btn-primary">Close</a>
+            </div>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+            <div id="watsonconv-floating-box"></div>
+        <script type='text/javascript' defer="defer" src='https://instant.page/3.0.0?ver=5.5.1' id='instant-page-js'></script>
+<script type='text/javascript' id='customer-feedback-js-extra'>
+/* <![CDATA[ */
+var feedback = {"site_key":"6Ld8YTEUAAAAAECqGGXNZbyMIfG0xZMIOJM_D3Vw","comment_min_characters":"Kommentaren m\u00e5ste vara minst 15 tecken.","select_topic":"V\u00e4nligen v\u00e4lj ett \u00e4mne."};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/customer-feedback/dist/js/CustomerFeedback.min.js' id='customer-feedback-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity/dist/js/Posts/assets/mod-posts-load-more-button.js' id='mod-posts-load-more-button-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/source/js/vendor/simple-pagination/jquery.simplePagination.min.js' id='vendor-pagination-js'></script>
+<script type='text/javascript' id='google-recaptcha-js-before'>
+            var CaptchaCallback = function() {
+                jQuery('.g-recaptcha').each(function(index, el) {
+                    grecaptcha.render(el, {'sitekey' : '6Ld8YTEUAAAAAECqGGXNZbyMIfG0xZMIOJM_D3Vw'});
+                });
+            };
+</script>
+<script type='text/javascript' defer="defer" src='https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&#038;render=explicit&#038;ver=1.0.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' id='modularity-guides-js-extra'>
+/* <![CDATA[ */
+var guides = {"email_sent":"Meddelandet har skickats","email_failed":"Meddelandet kunde inte skickas. V\u00e4nligen f\u00f6rs\u00f6k igen senare."};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/modularity-guides/dist/js/modularity-guides.dev.js' id='modularity-guides-js'></script>
+<script type='text/javascript' id='skyfish-integration-js-js-extra'>
+/* <![CDATA[ */
+var skyfishAjaxObject = null;
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/skyfish-integration/dist/js/SkyfishIntegration.b059ce4b11a2783d21e6.min.js' id='skyfish-integration-js-js'></script>
+<script type='text/javascript' defer="defer" src='//maps.googleapis.com/maps/api/js?key=AIzaSyAki5TaPKxxLHuYoYzIFmwf39y9EJS1uvk&#038;ver=5.5.1' id='google-maps-api-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/source/js/vendor/auto-complete/auto-complete.min.js' id='auto-complete-js'></script>
+<script type='text/javascript' id='event-integration-js-extra'>
+/* <![CDATA[ */
+var eventintegration = {"ajaxurl":"https:\/\/helsingborg.se\/wp\/wp-admin\/admin-ajax.php","apiurl":"https:\/\/api.helsingborg.se\/event\/json\/wp\/v2"};
+var eventIntegrationFront = {"event_pagination_error":"N\u00e5got gick fel, v\u00e4nligen f\u00f6rs\u00f6k igen senare.","email_not_matching":"E-postadresserna matchar inte.","must_upload_image":"Du m\u00e5ste ladda upp en bild."};
+/* ]]> */
+</script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp-content/plugins/api-event-manager-integration/dist/js/event-integration-front.2fb86e6a4c6d0ee534de.js' id='event-integration-js'></script>
+<script>
+                        window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+                        ga('create','UA-16678811-1','auto');ga('set', 'anonymizeIp', true);ga('send','pageview');
+                    </script><script type='text/javascript' defer="defer" async defer src='https://www.google-analytics.com/analytics.js?ver=1.0.0' id='google-analytics-js'></script>
+<script type='text/javascript' defer="defer" src='https://helsingborg.se/wp/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script defer>
+            var disturbances = {};
+            disturbances.inited = false;
+            disturbances.apiUrl = 'https://api.helsingborg.se/alarm/json/';
+            disturbances.places = ["2"];
+            disturbances.more_info = 'Visa mer information';
+            disturbances.less_info = 'Visa mindre information';
+            disturbances.output_small_active = '1';
+            disturbances.output_big_active = '1';
+            disturbances.output_small = 'body';
+            disturbances.output_big = 'body';
+            window.addEventListener("load",function(){var t=jQuery,i=disturbances.apiUrl+"wp/v2/disturbances",n={};disturbances.places.join(",").length>0&&(n.place=disturbances.places.join(",")),disturbances.inited||(t(document).on("click",'.notice-disturbance [data-action="toggle-notice-content"]',function(i){t(this).parents(".notice-disturbance").find(".notice-content").toggleClass("open").slideToggle(),t(this).parents(".notice-disturbance").find(".notice-content").hasClass("open")?t(this).text(disturbances.less_info):t(this).text(disturbances.more_info)}),disturbances.inited=!0),t.ajax({type:"GET",url:i,cache:!1,dataType:"json",data:n,crossDomain:!0,success:function(i){disturbances.output_small_active&&t.each(i.small,function(i,n){if(!(t("#disturbance-"+n.ID).length>0)){t('                            <div class="notice notice-disturbance notice-fullwidth info" id="disturbance-'+n.ID+'" style="display:none;">                                <div class="container">                                    <div class="grid grid-table">                                        <div class="grid-auto">                                            <i class="pricon pricon-notice-info"></i> <strong>'+n.post_title+'</strong>                                        </div>                                        <div class="grid-fit-content">                                            <button type="button" class="btn btn-sm btn-contrasted" data-action="toggle-notice-content">'+disturbances.more_info+'</button>                                        </div>                                    </div>                                    <div class="grid notice-content" style="display:none;">                                        <div class="grid-md-12">'+n.post_content+"</div>                                    </div>                                </div>                            </div>                        ").prependTo(disturbances.output_small).slideDown()}}),disturbances.output_big_active&&t.each(i.big,function(i,n){if(!(t("#disturbance-"+n.ID).length>0)){t('                            <div class="notice notice-disturbance notice-lg notice-fullwidth warning" id="disturbance-'+n.ID+'" style="display:none;">                                <div class="container">                                    <div class="grid grid-table">                                        <div class="grid-auto">                                            <i class="pricon pricon-notice-warning"></i> <strong>'+n.post_title+'</strong>                                        </div>                                        <div class="grid-fit-content">                                            <button type="button" class="btn btn-sm btn-contrasted" data-action="toggle-notice-content">'+disturbances.more_info+'</button>                                        </div>                                    </div>                                    <div class="grid notice-content" style="display:none;">                                        <div class="grid-md-12">'+n.post_content+"</div>                                    </div>                                </div>                            </div>                        ").prependTo(disturbances.output_big).slideDown()}})},error:function(t,i,n){console.log("API Alarm Integration plugin: Request failed!")}})});</script><script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'sv',
+                    autoDisplay: false,
+                    gaTrack: HbgPrimeArgs.googleTranslate.gaTrack,
+                    gaId: HbgPrimeArgs.googleTranslate.gaUA,
+                },
+                'google-translate-element'
+            );
+        }
+        </script><script>// --Vergic--
+if (typeof(disableVergic) == 'undefined') {
+(function (server, psID) {
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.src = server + '/' + psID + '/ps.js';
+    document.getElementsByTagName('head')[0].appendChild(s);
+}('https://account.psplugin.com', '331F5271-4B0B-4625-BF08-4157F101DBFF'));
+}
+
+// --Google Tag Manager--
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PVK49V');
+
+// -- Hotjar --
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1004672,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+//Vergic
+function expandVngageBanner() {
+  if(typeof window.vngageSolutionId != "undefined") {
+    var banner = vngage.getBanner(window.vngageSolutionId);
+    if(banner && banner.getDisplayStatus() !== 'expanded'){
+      banner.toggleExpand();
+      console.log("Expanding chat with solution id: " + window.vngageSolutionId); 
+    } else {
+      console.log("Chat box is already expanded."); 
+    }
+  } else {
+    console.log("Could not find any chat agent."); 
+  }
+}  
+
+</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"363e987a0a","applicationID":"79998397","transactionName":"ZAdaNRZVWEQDAEFaXl1NbRMNGxlaDBcaQ1RBEVESEBtBQBVMUVxSQQ1XFUtDRhgLDVFWSR0SUBE=","queueTime":0,"applicationTime":715,"atts":"SEBZQ15PS0o=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
